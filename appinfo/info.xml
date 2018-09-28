@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<info xmlns:xsi= "http://www.w3.org/2001/XMLSchema-instance"
+	  xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
+	<id>workflow_doctopdf</id>
+	<name>Document to PDF converter</name>
+	<summary>Rule based conversion of Documents into the PDF format</summary>
+	<description>An app to trigger automatic conversion of documents to PDF. Based on admin defined rules, a background job file be set up when a matching file was created or written. Then, LibreOffice is being utilized for converting the document.</description>
+	<version>1.0.0</version>
+	<licence>agpl</licence>
+	<author mail="coding@oding@schilljs.com">Joas Schilling</author>
+	<author mail="blizzz@arthur-schiwon.de">Arthur Schiwon</author>
+	<namespace>Workflow_DocToPdf</namespace>
+	<types>
+		<filesystem/>
+	</types>
+	<category>files</category>
+	<category>tools</category>
+	<category>organization</category>
+	<website>https://github.com/nextcloud/workflow_doctopdf</website>
+	<bugs>https://github.com/nextcloud/workflow_doctopdf/issues</bugs>
+	<repository type="git">https://github.com/nextcloud/workflow_doctopdf.git</repository>
+	<dependencies>
+		<nextcloud min-version="15" max-version="15" />
+	</dependencies>
+	<settings>
+		<admin>OCA\Workflow_DocToPdf\Settings\Admin</admin>
+		<admin-section>OCA\Workflow_DocToPdf\Settings\Section</admin-section>
+	</settings>
+</info>
