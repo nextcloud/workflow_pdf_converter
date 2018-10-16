@@ -23,9 +23,33 @@
 
 namespace OCA\Workflow_DocToPdf;
 
+use OCA\Workflow_DocToPdf\BackgroundJobs\Convert;
+use OCP\BackgroundJob\IJobList;
+use OCP\WorkflowEngine\IManager;
 use OCP\WorkflowEngine\IOperation;
 
 class Operation implements IOperation {
+
+	/** @var IManager */
+	private $workflowEngineManager;
+	/** @var IJobList */
+	private $jobList;
+
+	public function __construct(IManager $workflowEngineManager, IJobList $jobList) {
+		$this->workflowEngineManager = $workflowEngineManager;
+		$this->jobList = $jobList;
+	}
+
+	public function considerConversion(\OCP\Files\Node $node) {
+		try {
+			$this->workflowEngineManager->setFileInfo($node->getStorage(), $node->getPath());
+			$matches = $this->workflowEngineManager->getMatchingOperations(Operation::class);
+			if(!empty($matches)) {
+				$this->jobList->add(Convert::class, $node->getPath());
+			}
+		} catch(\OCP\Files\NotFoundException $e) {
+		}
+	}
 
 	/**
 	 * @param string $name
@@ -35,6 +59,5 @@ class Operation implements IOperation {
 	 * @since 9.1
 	 */
 	public function validateOperation($name, array $checks, $operation) {
-		// TODO: Implement validateOperation() method.
 	}
 }

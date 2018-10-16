@@ -87,7 +87,7 @@ $(document).ready(function() {
 	OC.SystemTags.collection.fetch({
 		success: function() {
 			new OCA.Workflow_DocToPdf.OperationsView({
-				el: '#files_accesscontrol .rules',
+				el: '#workflow_doctopdf .rules',
 				collection: new OCA.Workflow_DocToPdf.OperationsCollection()
 			});
 		}

@@ -23,7 +23,7 @@
 
 namespace OCA\Workflow_DocToPdf\Settings;
 
-use OCA\FilesAccessControl\AppInfo\Application;
+use OCA\Workflow_DocToPdf\AppInfo\Application;
 use OCP\AppFramework\Http\TemplateResponse;
 use OCP\IL10N;
 use OCP\Settings\ISettings;

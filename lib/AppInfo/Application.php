@@ -24,10 +24,9 @@
 
 namespace OCA\Workflow_DocToPdf\AppInfo;
 
-use OC\Files\Filesystem;
-use OCA\Workflow_DocToPdf\StorageWrapper;
-use OCP\Files\Storage\IStorage;
-use OCP\Util;
+use OCA\Workflow_DocToPdf\Operation;
+use OCP\AppFramework\QueryException;
+use OCP\ILogger;
 
 class Application extends \OCP\AppFramework\App {
 
@@ -38,49 +37,35 @@ class Application extends \OCP\AppFramework\App {
 		parent::__construct('workflow_doctopdf');
 	}
 
+	public function onCreateOrUpdate(\OCP\Files\Node $node) {
+		try {
+			// '', admin, 'files', 'path/to/file.txt'
+			list(,, $folder,) = explode('/', $node->getPath(), 4);
+			if($folder !== 'files') {
+				return;
+			}
+
+			// avoid converting pdfs into pdfs - would become infinite
+			if($node->getMimetype() === 'application/pdf') {
+				return;
+			}
+
+			$operation = $this->getContainer()->query(Operation::class);
+			/** @var $operation Operation */
+			$operation->considerConversion($node);
+		} catch (QueryException $e) {
+			$logger = $this->getContainer()->getServer()->getLogger();
+			$logger->logException($e, ['app' => 'workflow_doctopdf', 'level' => ILogger::ERROR]);
+		}
+	}
+
 	/**
 	 * Register the app to several events
 	 */
 	public function registerHooksAndListeners() {
-		Util::connectHook('OC_Filesystem', 'preSetup', $this, 'addStorageWrapper');
+		$root = $this->getContainer()->getServer()->getRootFolder();
+		$root->listen('\OC\Files', 'postCreate', [$this, 'onCreateOrUpdate']);
+		$root->listen('\OC\Files', 'postWrite', [$this, 'onCreateOrUpdate']);
 	}
 
-	/**
-	 * @internal
-	 */
-	public function addStorageWrapper() {
-		// Needs to be added as the first layer
-		Filesystem::addStorageWrapper('workflow_doctopdf', [$this, 'addStorageWrapperCallback'], -1);
-	}
-
-	/**
-	 * @internal
-	 * @param $mountPoint
-	 * @param IStorage $storage
-	 * @return StorageWrapper|IStorage
-	 * @throws \OCP\AppFramework\QueryException
-	 */
-	public function addStorageWrapperCallback($mountPoint, IStorage $storage) {
-		if (!\OC::$CLI && !$storage->instanceOfStorage('OCA\Files_Sharing\SharedStorage')) {
-			$operation = $this->getContainer()->query('OCA\Workflow_DocToPdf\Operation');
-
-			return new StorageWrapper([
-				'storage' => $storage,
-				'operation' => $operation,
-				'mountPoint' => $mountPoint,
-			]);
-		}
-
-		return $storage;
-	}
-
-	/**
-	 * Wrapper for type hinting
-	 *
-	 * @return \OCA\Workflow_DocToPdf\ConverterPlugin
-	 * @throws \OCP\AppFramework\QueryException
-	 */
-	protected function getPlugin() {
-		return $this->getContainer()->query(\OCA\Workflow_DocToPdf\ConverterPlugin::class);
-	}
 }

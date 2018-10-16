@@ -24,6 +24,7 @@
 
 namespace OCA\Workflow_DocToPdf\BackgroundJobs;
 
+use OCP\Files\NotFoundException;
 use OCP\IConfig;
 use OCP\ILogger;
 use OCP\ITempManager;
@@ -68,6 +69,11 @@ class Convert extends \OC\BackgroundJob\QueuedJob {
 		$file = basename($path);
 
 		\OC\Files\Filesystem::init($pathSegments[1], '/' . $pathSegments[1] . '/files');
+		try {
+			$node = \OC::$server->getLazyRootFolder()->get($argument);
+		} catch (NotFoundException $e) {
+			return;
+		}
 		$view = new \OC\Files\View($dir);
 
 		$tmpPath = $view->toTmpFile($file);
@@ -78,25 +84,39 @@ class Convert extends \OC\BackgroundJob\QueuedJob {
 
 		$exec = $command . $clParameters . escapeshellarg($tmpDir) . ' ' . escapeshellarg($tmpPath);
 
-		shell_exec($exec);
+		$exitCode = 0;
+		exec($exec, $out, $exitCode);
+		if($exitCode !== 0) {
+			$this->logger->error("could not convert {file}, reason: {out}",
+				[
+					'app' => 'workflow_doctopdf',
+					'file' => $node->getPath(),
+					'out' => $out
+				]
+			);
+			return;
+		}
 
 		$newTmpPath = pathinfo($tmpPath, PATHINFO_FILENAME) . '.pdf';
 		$newFileBaseName = pathinfo($file, PATHINFO_FILENAME);
 		$newFileName = $newFileBaseName . '.pdf';
 
+		$folder = $node->getParent();
+
 		$index = 0;
-		while ($view->file_exists($newFileName)) {
+		while ($folder->nodeExists($newFileName)) {
 			$index++;
 			$newFileName = $newFileBaseName . ' (' . $index . ').pdf';
 		}
 
+		$view = new \OC\Files\View($folder->getPath());
 		$view->fromTmpFile($tmpDir . '/' . $newTmpPath, $newFileName);
 	}
 
 	protected function getCommand() {
 		$libreOfficePath = $this->config->getSystemValue('preview_libreoffice_path', null);
 		if (is_string($libreOfficePath)) {
-			return $libreOfficePath;
+			return escapeshellcmd($libreOfficePath);
 		}
 
 		$whichLibreOffice = shell_exec('command -v libreoffice');
