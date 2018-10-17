@@ -82,6 +82,11 @@ class Convert extends \OC\BackgroundJob\QueuedJob {
 		$defaultParameters = ' -env:UserInstallation=file://' . escapeshellarg($tmpDir . '/nextcloud-' . $this->config->getSystemValue('instanceid') . '/') . ' --headless --nologo --nofirststartwizard --invisible --norestore --convert-to pdf --outdir ';
 		$clParameters = $this->config->getSystemValue('preview_office_cl_parameters', $defaultParameters);
 
+		// FIXME if passing an ogg, for instance, libreoffice would just run on infinitely, causing the background job to hang
+		// Thus, for one, we should blacklist some mimetypes (e.g. audio and video), but with application it is tricky
+		// since all the office things have their own custom mime types, as well as several applications
+		// pickin raisins is thus not really feasible
+		// so we should switch from exec to proc_open etc.
 		$exec = $command . $clParameters . escapeshellarg($tmpDir) . ' ' . escapeshellarg($tmpPath);
 
 		$exitCode = 0;
