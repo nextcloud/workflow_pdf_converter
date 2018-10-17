@@ -45,7 +45,11 @@ class Application extends \OCP\AppFramework\App {
 			}
 
 			// avoid converting pdfs into pdfs - would become infinite
-			if($node->getMimetype() === 'application/pdf') {
+			// also some types we know would not succeed
+			if($node->getMimetype() === 'application/pdf'
+				|| $node->getMimePart() === 'video'
+				|| $node->getMimePart() === 'audio'
+			) {
 				return;
 			}
 
