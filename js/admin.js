@@ -19,15 +19,15 @@
  */
 
 (function() {
-	OCA.Workflow_DocToPdf = OCA.Workflow_DocToPdf || {};
+	OCA.PDF_Converter = OCA.PDF_Converter || {};
 
 	/**
-	 * @class OCA.Workflow_DocToPdf.Operation
+	 * @class OCA.PDF_Converter.Operation
 	 */
-	OCA.Workflow_DocToPdf.Operation =
+	OCA.PDF_Converter.Operation =
 		OCA.WorkflowEngine.Operation.extend({
 			defaults: {
-				'class': 'OCA\\Workflow_DocToPdf\\Operation',
+				'class': 'OCA\\PDF_Converter\\Operation',
 				'name': '',
 				'checks': [],
 				'operation': ''
@@ -35,23 +35,23 @@
 		});
 
 	/**
-	 * @class OCA.Workflow_DocToPdf.OperationsCollection
+	 * @class OCA.PDF_Converter.OperationsCollection
 	 *
 	 * collection for all configured operations
 	 */
-	OCA.Workflow_DocToPdf.OperationsCollection =
+	OCA.PDF_Converter.OperationsCollection =
 		OCA.WorkflowEngine.OperationsCollection.extend({
-			model: OCA.Workflow_DocToPdf.Operation
+			model: OCA.PDF_Converter.Operation
 		});
 
 	/**
-	 * @class OCA.Workflow_DocToPdf.OperationView
+	 * @class OCA.PDF_Converter.OperationView
 	 *
 	 * this creates the view for a single operation
 	 */
-	OCA.Workflow_DocToPdf.OperationView =
+	OCA.PDF_Converter.OperationView =
 		OCA.WorkflowEngine.OperationView.extend({
-			model: OCA.Workflow_DocToPdf.Operation,
+			model: OCA.PDF_Converter.Operation,
 			render: function() {
 				var $el = OCA.WorkflowEngine.OperationView.prototype.render.apply(this);
 				$el.find('input.operation-operation').addClass('hidden');
@@ -59,19 +59,19 @@
 		});
 
 	/**
-	 * @class OCA.Workflow_DocToPdf.OperationsView
+	 * @class OCA.PDF_Converter.OperationsView
 	 *
 	 * this creates the view for configured operations
 	 */
-	OCA.Workflow_DocToPdf.OperationsView =
+	OCA.PDF_Converter.OperationsView =
 		OCA.WorkflowEngine.OperationsView.extend({
 			initialize: function() {
 				OCA.WorkflowEngine.OperationsView.prototype.initialize.apply(this, [
-					'OCA\\Workflow_DocToPdf\\Operation'
+					'OCA\\PDF_Converter\\Operation'
 				]);
 			},
 			renderOperation: function(operation) {
-				var subView = new OCA.Workflow_DocToPdf.OperationView({
+				var subView = new OCA.PDF_Converter.OperationView({
 					model: operation
 				});
 
@@ -86,9 +86,9 @@
 $(document).ready(function() {
 	OC.SystemTags.collection.fetch({
 		success: function() {
-			new OCA.Workflow_DocToPdf.OperationsView({
-				el: '#workflow_doctopdf .rules',
-				collection: new OCA.Workflow_DocToPdf.OperationsCollection()
+			new OCA.PDF_Converter.OperationsView({
+				el: '#pdf_converter .rules',
+				collection: new OCA.PDF_Converter.OperationsCollection()
 			});
 		}
 	});

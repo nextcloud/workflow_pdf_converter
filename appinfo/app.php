@@ -21,5 +21,5 @@
  *
  */
 
-$app = new \OCA\Workflow_DocToPdf\AppInfo\Application();
+$app = new \OCA\PDF_Converter\AppInfo\Application();
 $app->registerHooksAndListeners();

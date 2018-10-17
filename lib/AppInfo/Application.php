@@ -1,8 +1,7 @@
 <?php
 /**
- * @copyright Copyright (c) 2018 Joas Schilling <coding@schilljs.com>
+ * @copyright Copyright (c) 2018 Arthur Schiwon <blizzz@arthur-schiwon.de>
  *
- * @author Joas Schilling <coding@schilljs.com>
  * @author Arthur Schiwon <blizzz@arthur-schiwon.de>
  *
  * @license GNU AGPL version 3 or any later version
@@ -22,9 +21,9 @@
  *
  */
 
-namespace OCA\Workflow_DocToPdf\AppInfo;
+namespace OCA\PDF_Converter\AppInfo;
 
-use OCA\Workflow_DocToPdf\Operation;
+use OCA\PDF_Converter\Operation;
 use OCP\AppFramework\QueryException;
 use OCP\ILogger;
 
@@ -34,7 +33,7 @@ class Application extends \OCP\AppFramework\App {
 	 * Application constructor.
 	 */
 	public function __construct() {
-		parent::__construct('workflow_doctopdf');
+		parent::__construct('pdf_converter');
 	}
 
 	public function onCreateOrUpdate(\OCP\Files\Node $node) {
@@ -55,7 +54,7 @@ class Application extends \OCP\AppFramework\App {
 			$operation->considerConversion($node);
 		} catch (QueryException $e) {
 			$logger = $this->getContainer()->getServer()->getLogger();
-			$logger->logException($e, ['app' => 'workflow_doctopdf', 'level' => ILogger::ERROR]);
+			$logger->logException($e, ['app' => 'pdf_converter', 'level' => ILogger::ERROR]);
 		}
 	}
 

@@ -21,9 +21,9 @@
  *
  */
 
-namespace OCA\Workflow_DocToPdf;
+namespace OCA\PDF_Converter;
 
-use OCA\Workflow_DocToPdf\BackgroundJobs\Convert;
+use OCA\PDF_Converter\BackgroundJobs\Convert;
 use OCP\BackgroundJob\IJobList;
 use OCP\WorkflowEngine\IManager;
 use OCP\WorkflowEngine\IOperation;

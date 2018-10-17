@@ -21,7 +21,7 @@
  *
  */
 
-namespace OCA\Workflow_DocToPdf\Settings;
+namespace OCA\PDF_Converter\Settings;
 
 use OCP\IL10N;
 use OCP\IURLGenerator;
@@ -45,7 +45,7 @@ class Section implements IIconSection {
 	 * @returns string
 	 */
 	public function getID() {
-		return 'workflow_doctopdf';
+		return 'pdf_converter';
 	}
 
 	/**
@@ -73,6 +73,6 @@ class Section implements IIconSection {
 	 * {@inheritdoc}
 	 */
 	public function getIcon() {
-		return $this->url->imagePath('workflow_doctopdf', 'app-dark.svg');
+		return $this->url->imagePath('pdf_converter', 'app-dark.svg');
 	}
 }
