@@ -54,7 +54,29 @@
 			model: OCA.PDF_Converter.Operation,
 			render: function() {
 				var $el = OCA.WorkflowEngine.OperationView.prototype.render.apply(this);
-				$el.find('input.operation-operation').addClass('hidden');
+				$el.find('input.operation-operation')
+					.css('width', '400px')
+					.select2({
+						placeholder: t('pdf_converter', 'Mode…'),
+						data: [
+							{
+								id: 'keep;preserve',
+								text: t('pdf_converter', 'Keep original, preserve existing PDFs'),
+							},
+							{
+								id: 'keep;overwrite',
+								text: t('pdf_converter', 'Keep original, overwrite existing PDF'),
+							},
+							{
+								id: 'delete;preserve',
+								text: t('pdf_converter', 'Delete original, preserve existing PDFs'),
+							},
+							{
+								id: 'delete;overwrite',
+								text: t('pdf_converter', 'Delete original, overwrite existing PDF'),
+							},
+						],
+					});
 			}
 		});
 

@@ -62,15 +62,17 @@ class Convert extends \OC\BackgroundJob\QueuedJob {
 			$this->logger->error('Can not find office path. Please make sure to configure "preview_libreoffice_path" in your config file.');
 		}
 
-		$path = (string) $argument;
+		$path = (string)$argument['path'];
+		$originalFileMode = (string)$argument['originalFileMode'];
+		$targetPdfMode = (string)$argument['targetPdfMode'];
 
-		$pathSegments = explode('/', $argument, 4);
+		$pathSegments = explode('/', $path, 4);
 		$dir = dirname($path);
 		$file = basename($path);
 
 		\OC\Files\Filesystem::init($pathSegments[1], '/' . $pathSegments[1] . '/files');
 		try {
-			$node = \OC::$server->getLazyRootFolder()->get($argument);
+			$node = \OC::$server->getLazyRootFolder()->get($path);
 		} catch (NotFoundException $e) {
 			return;
 		}
@@ -91,7 +93,7 @@ class Convert extends \OC\BackgroundJob\QueuedJob {
 
 		$exitCode = 0;
 		exec($exec, $out, $exitCode);
-		if($exitCode !== 0) {
+		if ($exitCode !== 0) {
 			$this->logger->error("could not convert {file}, reason: {out}",
 				[
 					'app' => 'pdf_converter',
@@ -109,13 +111,20 @@ class Convert extends \OC\BackgroundJob\QueuedJob {
 		$folder = $node->getParent();
 
 		$index = 0;
-		while ($folder->nodeExists($newFileName)) {
+		while ($targetPdfMode === 'preserve' && $folder->nodeExists($newFileName)) {
 			$index++;
 			$newFileName = $newFileBaseName . ' (' . $index . ').pdf';
 		}
 
-		$view = new \OC\Files\View($folder->getPath());
 		$view->fromTmpFile($tmpDir . '/' . $newTmpPath, $newFileName);
+
+		if ($originalFileMode === 'delete') {
+			// FIXME: sometimes causes "unable to rename, destination directory is not writable" because the trashbin url
+			// looses the user part in \OC\Files\Storage\Local::moveFromStorage() line 460
+			// return $rootStorage->rename($sourceStorage->getSourcePath($sourceInternalPath), $this->getSourcePath($targetInternalPath));
+			//                                                                                 ^
+			$node->delete();
+		}
 	}
 
 	protected function getCommand() {
