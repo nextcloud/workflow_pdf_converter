@@ -21,9 +21,9 @@
  *
  */
 
-namespace OCA\PDF_Converter;
+namespace OCA\WorkflowPDFConverter;
 
-use OCA\PDF_Converter\BackgroundJobs\Convert;
+use OCA\WorkflowPDFConverter\BackgroundJobs\Convert;
 use OCP\BackgroundJob\IJobList;
 use OCP\IL10N;
 use OCP\WorkflowEngine\IManager;

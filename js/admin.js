@@ -19,15 +19,15 @@
  */
 
 (function() {
-	OCA.PDF_Converter = OCA.PDF_Converter || {};
+	OCA.WorkflowPDFConverter = OCA.WorkflowPDFConverter || {};
 
 	/**
-	 * @class OCA.PDF_Converter.Operation
+	 * @class OCA.WorkflowPDFConverter.Operation
 	 */
-	OCA.PDF_Converter.Operation =
+	OCA.WorkflowPDFConverter.Operation =
 		OCA.WorkflowEngine.Operation.extend({
 			defaults: {
-				'class': 'OCA\\PDF_Converter\\Operation',
+				'class': 'OCA\\WorkflowPDFConverter\\Operation',
 				'name': '',
 				'checks': [],
 				'operation': ''
@@ -35,45 +35,45 @@
 		});
 
 	/**
-	 * @class OCA.PDF_Converter.OperationsCollection
+	 * @class OCA.WorkflowPDFConverter.OperationsCollection
 	 *
 	 * collection for all configured operations
 	 */
-	OCA.PDF_Converter.OperationsCollection =
+	OCA.WorkflowPDFConverter.OperationsCollection =
 		OCA.WorkflowEngine.OperationsCollection.extend({
-			model: OCA.PDF_Converter.Operation
+			model: OCA.WorkflowPDFConverter.Operation
 		});
 
 	/**
-	 * @class OCA.PDF_Converter.OperationView
+	 * @class OCA.WorkflowPDFConverter.OperationView
 	 *
 	 * this creates the view for a single operation
 	 */
-	OCA.PDF_Converter.OperationView =
+	OCA.WorkflowPDFConverter.OperationView =
 		OCA.WorkflowEngine.OperationView.extend({
-			model: OCA.PDF_Converter.Operation,
+			model: OCA.WorkflowPDFConverter.Operation,
 			render: function() {
 				var $el = OCA.WorkflowEngine.OperationView.prototype.render.apply(this);
 				$el.find('input.operation-operation')
 					.css('width', '400px')
 					.select2({
-						placeholder: t('pdf_converter', 'Mode…'),
+						placeholder: t('workflow_pdf_converter', 'Mode…'),
 						data: [
 							{
 								id: 'keep;preserve',
-								text: t('pdf_converter', 'Keep original, preserve existing PDFs'),
+								text: t('workflow_pdf_converter', 'Keep original, preserve existing PDFs'),
 							},
 							{
 								id: 'keep;overwrite',
-								text: t('pdf_converter', 'Keep original, overwrite existing PDF'),
+								text: t('workflow_pdf_converter', 'Keep original, overwrite existing PDF'),
 							},
 							{
 								id: 'delete;preserve',
-								text: t('pdf_converter', 'Delete original, preserve existing PDFs'),
+								text: t('workflow_pdf_converter', 'Delete original, preserve existing PDFs'),
 							},
 							{
 								id: 'delete;overwrite',
-								text: t('pdf_converter', 'Delete original, overwrite existing PDF'),
+								text: t('workflow_pdf_converter', 'Delete original, overwrite existing PDF'),
 							},
 						],
 					});
@@ -81,19 +81,19 @@
 		});
 
 	/**
-	 * @class OCA.PDF_Converter.OperationsView
+	 * @class OCA.WorkflowPDFConverter.OperationsView
 	 *
 	 * this creates the view for configured operations
 	 */
-	OCA.PDF_Converter.OperationsView =
+	OCA.WorkflowPDFConverter.OperationsView =
 		OCA.WorkflowEngine.OperationsView.extend({
 			initialize: function() {
 				OCA.WorkflowEngine.OperationsView.prototype.initialize.apply(this, [
-					'OCA\\PDF_Converter\\Operation'
+					'OCA\\WorkflowPDFConverter\\Operation'
 				]);
 			},
 			renderOperation: function(operation) {
-				var subView = new OCA.PDF_Converter.OperationView({
+				var subView = new OCA.WorkflowPDFConverter.OperationView({
 					model: operation
 				});
 
@@ -108,9 +108,9 @@
 $(document).ready(function() {
 	OC.SystemTags.collection.fetch({
 		success: function() {
-			new OCA.PDF_Converter.OperationsView({
-				el: '#pdf_converter .rules',
-				collection: new OCA.PDF_Converter.OperationsCollection()
+			new OCA.WorkflowPDFConverter.OperationsView({
+				el: '#workflow_pdf_converter .rules',
+				collection: new OCA.WorkflowPDFConverter.OperationsCollection()
 			});
 		}
 	});
