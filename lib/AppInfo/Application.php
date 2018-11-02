@@ -21,9 +21,9 @@
  *
  */
 
-namespace OCA\PDF_Converter\AppInfo;
+namespace OCA\WorkflowPDFConverter\AppInfo;
 
-use OCA\PDF_Converter\Operation;
+use OCA\WorkflowPDFConverter\Operation;
 use OCP\AppFramework\QueryException;
 use OCP\ILogger;
 
@@ -33,7 +33,7 @@ class Application extends \OCP\AppFramework\App {
 	 * Application constructor.
 	 */
 	public function __construct() {
-		parent::__construct('pdf_converter');
+		parent::__construct('workflow_pdf_converter');
 	}
 
 	public function onCreateOrUpdate(\OCP\Files\Node $node) {
@@ -58,7 +58,7 @@ class Application extends \OCP\AppFramework\App {
 			$operation->considerConversion($node);
 		} catch (QueryException $e) {
 			$logger = $this->getContainer()->getServer()->getLogger();
-			$logger->logException($e, ['app' => 'pdf_converter', 'level' => ILogger::ERROR]);
+			$logger->logException($e, ['app' => 'workflow_pdf_converter', 'level' => ILogger::ERROR]);
 		}
 	}
 

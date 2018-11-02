@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <info xmlns:xsi= "http://www.w3.org/2001/XMLSchema-instance"
 	  xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
-	<id>pdf_converter</id>
+	<id>workflow_pdf_converter</id>
 	<name>Automated PDF conversion</name>
 	<summary>Rule based conversion of Documents into the PDF format</summary>
 	<description>An app to trigger automatic conversion of documents to PDF. Based on admin defined rules, a background job file be set up when a matching file was created or written. Then, LibreOffice is being utilized for converting the document.</description>
@@ -9,21 +9,21 @@
 	<licence>agpl</licence>
 	<author mail="coding@oding@schilljs.com">Joas Schilling</author>
 	<author mail="blizzz@arthur-schiwon.de">Arthur Schiwon</author>
-	<namespace>PDF_Converter</namespace>
+	<namespace>WorkflowPDFConverter</namespace>
 	<types>
 		<filesystem/>
 	</types>
 	<category>files</category>
 	<category>tools</category>
 	<category>organization</category>
-	<website>https://github.com/nextcloud/pdf_converter</website>
-	<bugs>https://github.com/nextcloud/pdf_converter/issues</bugs>
-	<repository type="git">https://github.com/nextcloud/pdf_converter.git</repository>
+	<website>https://github.com/nextcloud/workflow_pdf_converter</website>
+	<bugs>https://github.com/nextcloud/workflow_pdf_converter/issues</bugs>
+	<repository type="git">https://github.com/nextcloud/workflow_pdf_converter.git</repository>
 	<dependencies>
 		<nextcloud min-version="15" max-version="15" />
 	</dependencies>
 	<settings>
-		<admin>OCA\PDF_Converter\Settings\Admin</admin>
-		<admin-section>OCA\PDF_Converter\Settings\Section</admin-section>
+		<admin>OCA\WorkflowPDFConverter\Settings\Admin</admin>
+		<admin-section>OCA\WorkflowPDFConverter\Settings\Section</admin-section>
 	</settings>
 </info>

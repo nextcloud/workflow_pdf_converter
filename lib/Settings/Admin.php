@@ -21,9 +21,9 @@
  *
  */
 
-namespace OCA\PDF_Converter\Settings;
+namespace OCA\WorkflowPDFConverter\Settings;
 
-use OCA\PDF_Converter\AppInfo\Application;
+use OCA\WorkflowPDFConverter\AppInfo\Application;
 use OCP\AppFramework\Http\TemplateResponse;
 use OCP\IL10N;
 use OCP\Settings\ISettings;
@@ -68,7 +68,7 @@ class Admin implements ISettings {
 	 * @return string the section ID, e.g. 'sharing'
 	 */
 	public function getSection() {
-		return 'pdf_converter';
+		return 'workflow_pdf_converter';
 	}
 
 	/**

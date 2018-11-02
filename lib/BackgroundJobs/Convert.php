@@ -22,7 +22,7 @@
  *
  */
 
-namespace OCA\PDF_Converter\BackgroundJobs;
+namespace OCA\WorkflowPDFConverter\BackgroundJobs;
 
 use OCP\Files\NotFoundException;
 use OCP\IConfig;
@@ -96,7 +96,7 @@ class Convert extends \OC\BackgroundJob\QueuedJob {
 		if ($exitCode !== 0) {
 			$this->logger->error("could not convert {file}, reason: {out}",
 				[
-					'app' => 'pdf_converter',
+					'app' => 'workflow_pdf_converter',
 					'file' => $node->getPath(),
 					'out' => $out
 				]
