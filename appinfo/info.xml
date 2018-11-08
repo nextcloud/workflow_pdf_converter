@@ -19,6 +19,8 @@
 	<website>https://github.com/nextcloud/workflow_pdf_converter</website>
 	<bugs>https://github.com/nextcloud/workflow_pdf_converter/issues</bugs>
 	<repository type="git">https://github.com/nextcloud/workflow_pdf_converter.git</repository>
+	<screenshot small-thumbnail="https://raw.githubusercontent.com/nextcloud/workflow_pdf_converter/master/screenshots/app-settings-ui_small.png">https://raw.githubusercontent.com/nextcloud/workflow_pdf_converter/master/screenshots/app-settings-ui.png</screenshot>
+	<screenshot small-thumbnail="https://raw.githubusercontent.com/nextcloud/workflow_pdf_converter/master/screenshots/management-apps_small.png">https://raw.githubusercontent.com/nextcloud/workflow_pdf_converter/master/screenshots/management-apps.png</screenshot>
 	<dependencies>
 		<nextcloud min-version="15" max-version="15" />
 	</dependencies>
