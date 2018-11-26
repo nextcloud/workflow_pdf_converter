@@ -53,7 +53,7 @@ class Operation implements IOperation {
 
 	public function considerConversion(\OCP\Files\Node $node) {
 		try {
-			$this->workflowEngineManager->setFileInfo($node->getStorage(), $node->getPath());
+			$this->workflowEngineManager->setFileInfo($node->getStorage(), $node->getInternalPath());
 			$matches = $this->workflowEngineManager->getMatchingOperations(Operation::class, false);
 			$originalFileMode = $targetPdfMode = null;
 			foreach($matches as $match) {
