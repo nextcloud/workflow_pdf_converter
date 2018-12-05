@@ -1,6 +1,8 @@
 # Nextcloud PDF Converter app
 
-This app lets Nextcloud automatically convert documents to PDF. By utilizing the workflow engine it allows Nextcloud administrators to define rules upon which various documents are eqnueued to be converted to PDF. Eventually, the conversion happens in a background job by feeding the source file to the found or specifiec `libreoffice` or `openoffice` binary. Depending on the selected behaviour the source file can either be kept or deleted and the resulting PDFs can either be preserved by increasing a number added to the filename or overwritten.
+This app lets Nextcloud automatically convert documents to PDF. By utilizing the workflow engine it allows Nextcloud administrators to define rules upon which various documents are enqueued to be converted to PDF. Eventually, the conversion happens in a background job by feeding the source file to the found or specific `libreoffice` or `openoffice` binary. Depending on the selected behaviour the source file can either be kept or deleted and the resulting PDFs can either be preserved by increasing a number added to the filename or overwritten.
+
+The conversion job is being created when a file was created or updated and also when a system tag was assigned.
 
 Learn more about workflows on https://nextcloud.com/workflow
 
