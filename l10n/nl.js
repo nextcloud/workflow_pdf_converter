@@ -12,7 +12,6 @@ OC.L10N.register(
     "Each rule group consists of one or more rules. A request matches a group if all rules evaluate to true. On creating or writing a file all defined groups are evaluated and when matching, a background job is set up to execute the conversion of the corresponding file." : "Elke regelset bestaat uit een of meer regels. Een aanvraag voldoet aan de set als aan alle regels wordt voldaan. Bij creëren of wegschrijven worden alle sets geëvalueerd en wanneer van toepassing, wordt een achtergrondtaak gestart om conversie van het betreffende bestand.",
     "Document to PDF converter" : "Document naar PDF converter",
     "Automated PDF conversion" : "Geautomatiseerde PDF conversie",
-    "Rule based conversion of Documents into the PDF format" : "Regelgebaseerde conversie van documenten naar het PDF-formaat",
-    "An app to trigger automatic conversion of documents to PDF. Based on admin defined rules, a background job file be set up when a matching file was created or written. Then, LibreOffice is being utilized for converting the document." : "Een app voor automatische conversie van documenten naar PDF. Gebaseerd op door de beheerder ingestelde regels wordt een achtergrondtaak uitgevoerd als een regel van toepassing is voor creëren of wegschrijven van een bestand. LibreOffice wordt dan gebruikt voor conversie van het document."
+    "Rule based conversion of Documents into the PDF format" : "Regelgebaseerde conversie van documenten naar het PDF-formaat"
 },
 "nplurals=2; plural=(n != 1);");

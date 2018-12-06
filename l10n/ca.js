@@ -12,7 +12,6 @@ OC.L10N.register(
     "Each rule group consists of one or more rules. A request matches a group if all rules evaluate to true. On creating or writing a file all defined groups are evaluated and when matching, a background job is set up to execute the conversion of the corresponding file." : "Cada grup de regles consta d'una o més regles. Una petició encaixa amb un grup si totes les regles avaluen com a cert. Quan es crea o escriu un fitxer s'avaluen tots els grups definits i quan encaixen, una tasca de segon terme es configura per executar la conversió de l'arxiu corresponent.",
     "Document to PDF converter" : "Conversor de document a PDF",
     "Automated PDF conversion" : "Conversió automatitzada PDF",
-    "Rule based conversion of Documents into the PDF format" : "Conversió segons regles de Documents cap el format PDF",
-    "An app to trigger automatic conversion of documents to PDF. Based on admin defined rules, a background job file be set up when a matching file was created or written. Then, LibreOffice is being utilized for converting the document." : "Un app per llançar la conversió automàtica de documents a PDF. Basat en regles definides per l'administrador, es crea o escriu un arxiu de tasca de segon terme. Llavors, LibreOffice es fa servir per convertir el document."
+    "Rule based conversion of Documents into the PDF format" : "Conversió segons regles de Documents cap el format PDF"
 },
 "nplurals=2; plural=(n != 1);");
