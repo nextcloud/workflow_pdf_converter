@@ -10,7 +10,6 @@
     "Each rule group consists of one or more rules. A request matches a group if all rules evaluate to true. On creating or writing a file all defined groups are evaluated and when matching, a background job is set up to execute the conversion of the corresponding file." : "Her bir kural grubunda bir ya da bir kaç kural bulunur. Bir isteğin bir gruba uygun olması için gruptaki tüm kurallar karşılanmış olmalıdır. Bir dosyanın eklenebilmesi ya da yazılabilmesi için tanımlanmış gruplar değerlendirilir ve eşleşme varsa ilgili dosya için arka planda yürütülecek bir dönüştürme görevi ayarlanır.",
     "Document to PDF converter" : "Belge PDF dönüştürücü",
     "Automated PDF conversion" : "Otomatik PDF dönüşümü",
-    "Rule based conversion of Documents into the PDF format" : "Kurallara göre belgeleri PDF biçimine dönüştürme",
-    "An app to trigger automatic conversion of documents to PDF. Based on admin defined rules, a background job file be set up when a matching file was created or written. Then, LibreOffice is being utilized for converting the document." : "Belgelerin PDF biçimine dönüştürülmesi için bir uygulama tetiklenir. Yönetici tarafından oluşturulmuş kurallara uyan bir dosya eklendiğinde ya da kaydedildiğinde bir arka plan görevi dosyası oluşturulur. Ardından belgeyi dönüştürmek için LibreOffice başlatılır."
+    "Rule based conversion of Documents into the PDF format" : "Kurallara göre belgeleri PDF biçimine dönüştürme"
 },"pluralForm" :"nplurals=2; plural=(n > 1);"
 }
