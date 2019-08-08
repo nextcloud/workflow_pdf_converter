@@ -13,6 +13,6 @@ OC.L10N.register(
     "Document to PDF converter" : "ドキュメントをPDFに変換する",
     "Automated PDF conversion" : "自動PDF変換",
     "Rule based conversion of Documents into the PDF format" : "文書をPDF形式に変換するルールベース",
-    "An app to trigger automatic conversion of documents to PDF. Based on admin defined rules, a background job file be set up when a matching file was created or written, or was assigned a tag. Then, LibreOffice is being utilized for converting the document." : "ドキュメントをPDFに自動的に変換するアプリケーションです。 管理者が定義したルールに基づいて、一致するファイルが作成または書き込まれたときにバックグラウンドジョブファイルが設定されるか、タグが割り当てられます。次に、ドキュメントの変換にLibreOfficeが利用されています。"
+    "An app to trigger automatic conversion of documents to PDF. Based on admin defined rules, a background job file be set up when a matching file was created or written, or was assigned a tag. Then, LibreOffice is being utilized for converting the document." : "ドキュメントをPDFに自動的に変換するアプリケーションです。 管理者が定義したルールに基づいて、一致するファイルが作成されたか書き込まれたとき、またはタグが割り当てられた時にバックグラウンドジョブファイルが設定されます。ドキュメントの変換にはLibreOfficeが利用されています。"
 },
 "nplurals=1; plural=0;");
