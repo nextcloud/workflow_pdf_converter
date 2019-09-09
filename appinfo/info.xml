@@ -24,8 +24,4 @@
 	<dependencies>
 		<nextcloud min-version="18" max-version="18" />
 	</dependencies>
-	<settings>
-		<admin>OCA\WorkflowPDFConverter\Settings\Admin</admin>
-		<admin-section>OCA\WorkflowPDFConverter\Settings\Section</admin-section>
-	</settings>
 </info>

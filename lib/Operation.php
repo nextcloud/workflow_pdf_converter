@@ -23,13 +23,17 @@
 
 namespace OCA\WorkflowPDFConverter;
 
+use OCA\WorkflowEngine\Entity\File;
 use OCA\WorkflowPDFConverter\BackgroundJobs\Convert;
 use OCP\BackgroundJob\IJobList;
+use OCP\Files\Folder;
+use OCP\Files\Node;
 use OCP\IL10N;
-use OCP\WorkflowEngine\IManager;
-use OCP\WorkflowEngine\IOperation;
+use OCP\WorkflowEngine\IRuleMatcher;
+use OCP\WorkflowEngine\ISpecificOperation;
+use Symfony\Component\EventDispatcher\GenericEvent;
 
-class Operation implements IOperation {
+class Operation implements ISpecificOperation {
 
 	const MODES = [
 		'keep;preserve',
@@ -38,23 +42,68 @@ class Operation implements IOperation {
 		'delete;overwrite',
 	];
 
-	/** @var IManager */
-	private $workflowEngineManager;
 	/** @var IJobList */
 	private $jobList;
 	/** @var IL10N */
 	private $l;
 
-	public function __construct(IManager $workflowEngineManager, IJobList $jobList, IL10N $l) {
-		$this->workflowEngineManager = $workflowEngineManager;
+	public function __construct(IJobList $jobList, IL10N $l) {
 		$this->jobList = $jobList;
 		$this->l = $l;
 	}
 
-	public function considerConversion(\OCP\Files\Node $node) {
+	/**
+	 * @throws \UnexpectedValueException
+	 * @since 9.1
+	 */
+	public function validateOperation(string $name, array $checks, string $operation): void {
+		if(!in_array($operation, Operation::MODES)) {
+			throw new \UnexpectedValueException($this->l->t('Please choose a mode.'));
+		}
+	}
+
+	public function getDisplayName(): string {
+		return $this->l->t('PDF conversion');
+	}
+
+	public function getDescription(): string {
+		return $this->l->t('Convert documents into the PDF format on upload and write.');
+	}
+
+	public function getIcon(): string {
+		return \OC::$server->getURLGenerator()->imagePath('workflow_pdf_converter', 'app.svg');
+	}
+
+	public function isAvailableForScope(int $scope): bool {
+		return true;
+	}
+
+	public function onEvent(string $eventName, GenericEvent $event, IRuleMatcher $ruleMatcher): void {
 		try {
-			$this->workflowEngineManager->setFileInfo($node->getStorage(), $node->getInternalPath());
-			$matches = $this->workflowEngineManager->getMatchingOperations(Operation::class, false);
+			if($eventName === '\OCP\Files::postRename') {
+				/** @var Node $oldNode */
+				list(, $node) = $event->getSubject();
+			} else {
+				$node = $event->getSubject();
+			}
+			/** @var Node $node */
+
+			// '', admin, 'files', 'path/to/file.txt'
+			list(,, $folder,) = explode('/', $node->getPath(), 4);
+			if($folder !== 'files' || $node instanceof Folder) {
+				return;
+			}
+
+			// avoid converting pdfs into pdfs - would become infinite
+			// also some types we know would not succeed
+			if($node->getMimetype() === 'application/pdf'
+				|| $node->getMimePart() === 'video'
+				|| $node->getMimePart() === 'audio'
+			) {
+				return;
+			}
+
+			$matches = $ruleMatcher->getMatchingOperations(Operation::class, false);
 			$originalFileMode = $targetPdfMode = null;
 			foreach($matches as $match) {
 				$fileModes = explode(';', $match['operation']);
@@ -80,16 +129,7 @@ class Operation implements IOperation {
 		}
 	}
 
-	/**
-	 * @param string $name
-	 * @param array[] $checks
-	 * @param string $operation
-	 * @throws \UnexpectedValueException
-	 * @since 9.1
-	 */
-	public function validateOperation($name, array $checks, $operation) {
-		if(!in_array($operation, Operation::MODES)) {
-			throw new \UnexpectedValueException($this->l->t('Please choose a mode.'));
-		}
+	public function getEntityId(): string {
+		return File::class;
 	}
 }

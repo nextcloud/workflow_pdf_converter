@@ -23,13 +23,6 @@
 
 namespace OCA\WorkflowPDFConverter\AppInfo;
 
-use OCA\WorkflowPDFConverter\Operation;
-use OCP\AppFramework\QueryException;
-use OCP\Files\IRootFolder;
-use OCP\ILogger;
-use OCP\SystemTag\MapperEvent;
-use Symfony\Component\EventDispatcher\EventDispatcherInterface;
-
 class Application extends \OCP\AppFramework\App {
 
 	/**
@@ -37,56 +30,6 @@ class Application extends \OCP\AppFramework\App {
 	 */
 	public function __construct() {
 		parent::__construct('workflow_pdf_converter');
-	}
-
-	public function processNode(\OCP\Files\Node $node) {
-		try {
-			// '', admin, 'files', 'path/to/file.txt'
-			list(,, $folder,) = explode('/', $node->getPath(), 4);
-			if($folder !== 'files') {
-				return;
-			}
-
-			// avoid converting pdfs into pdfs - would become infinite
-			// also some types we know would not succeed
-			if($node->getMimetype() === 'application/pdf'
-				|| $node->getMimePart() === 'video'
-				|| $node->getMimePart() === 'audio'
-			) {
-				return;
-			}
-
-			$operation = $this->getContainer()->query(Operation::class);
-			/** @var $operation Operation */
-			$operation->considerConversion($node);
-		} catch (QueryException $e) {
-			$logger = $this->getContainer()->getServer()->getLogger();
-			$logger->logException($e, ['app' => 'workflow_pdf_converter', 'level' => ILogger::ERROR]);
-		}
-	}
-
-	public function onTagAssigned(MapperEvent $event) {
-		if($event->getObjectType() !== 'files') {
-			return;
-		}
-
-		$root = $this->getContainer()->getServer()->getRootFolder();
-		$nodes = $root->getById((int)$event->getObjectId());
-		if(is_array($nodes) && !empty($nodes)) {
-			$this->processNode(array_shift($nodes));
-		}
-	}
-
-	/**
-	 * Register the app to several events
-	 */
-	public function registerHooksAndListeners() {
-		$root = $this->getContainer()->getServer()->getRootFolder();
-		$root->listen('\OC\Files', 'postCreate', [$this, 'processNode']);
-		$root->listen('\OC\Files', 'postWrite', [$this, 'processNode']);
-
-		$eventDispatcher = $this->getContainer()->getServer()->getEventDispatcher();
-		$eventDispatcher->addListener(MapperEvent::EVENT_ASSIGN, [$this, 'onTagAssigned']);
 	}
 
 }
