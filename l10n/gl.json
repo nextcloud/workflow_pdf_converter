@@ -11,6 +11,6 @@
     "Document to PDF converter" : "Convertedor de documento a PDF",
     "Automated PDF conversion" : "Conversión automática a PDF",
     "Rule based conversion of Documents into the PDF format" : "Conversión de documentos ao formato PDF baseandose en regras",
-    "An app to trigger automatic conversion of documents to PDF. Based on admin defined rules, a background job file be set up when a matching file was created or written, or was assigned a tag. Then, LibreOffice is being utilized for converting the document." : "Un aplicativo para activar a conversión automática de documentos a PDF. Baseado nas regras definidas polo administrador, estabelecese un ficheiro de traballo en segundo plano cando se crea ou escribe un ficheiro coincidente. Entón, empregase o LibreOffice para converter o documento."
+    "An app to trigger automatic conversion of documents to PDF. Based on admin defined rules, a background job file be set up when a matching file was created or written, or was assigned a tag. Then, LibreOffice is being utilized for converting the document." : "Unha aplicación para activar a conversión automática de documentos a PDF. Baseado nas regras definidas polo administrador, estabelecese un ficheiro de traballo en segundo plano cando se crea ou escribe un ficheiro coincidente. Entón, empregase o LibreOffice para converter o documento."
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }
