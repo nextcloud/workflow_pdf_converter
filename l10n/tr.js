@@ -1,7 +1,7 @@
 OC.L10N.register(
     "workflow_pdf_converter",
     {
-    "Mode…" : "Kip…",
+    "Mode…" : "Kip …",
     "Keep original, preserve existing PDFs" : "Özgün korunsun, var olan PDF belgeleri korunsun",
     "Keep original, overwrite existing PDF" : "Özgün korunsun, var olan PDF dosyaları üzerine yazılsın",
     "Delete original, preserve existing PDFs" : "Özgün silinsin, var olan PDF dosyaları korunsun",
