@@ -26,12 +26,13 @@ namespace OCA\WorkflowPDFConverter;
 use OCA\WorkflowEngine\Entity\File;
 use OCA\WorkflowPDFConverter\BackgroundJobs\Convert;
 use OCP\BackgroundJob\IJobList;
+use OCP\EventDispatcher\Event;
+use OCP\EventDispatcher\GenericEvent;
 use OCP\Files\Folder;
 use OCP\Files\Node;
 use OCP\IL10N;
 use OCP\WorkflowEngine\IRuleMatcher;
 use OCP\WorkflowEngine\ISpecificOperation;
-use Symfony\Component\EventDispatcher\GenericEvent;
 
 class Operation implements ISpecificOperation {
 
@@ -78,7 +79,10 @@ class Operation implements ISpecificOperation {
 		return true;
 	}
 
-	public function onEvent(string $eventName, GenericEvent $event, IRuleMatcher $ruleMatcher): void {
+	public function onEvent(string $eventName, Event $event, IRuleMatcher $ruleMatcher): void {
+		if(!$event instanceof GenericEvent) {
+			return;
+		}
 		try {
 			if($eventName === '\OCP\Files::postRename') {
 				/** @var Node $oldNode */
@@ -103,7 +107,7 @@ class Operation implements ISpecificOperation {
 				return;
 			}
 
-			$matches = $ruleMatcher->getMatchingOperations(Operation::class, false);
+			$matches = $ruleMatcher->getFlows(false);
 			$originalFileMode = $targetPdfMode = null;
 			foreach($matches as $match) {
 				$fileModes = explode(';', $match['operation']);

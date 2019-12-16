@@ -21,4 +21,4 @@
  *
  */
 
-$app = new \OCA\WorkflowPDFConverter\AppInfo\Application();
+$app = \OC::$server->query(\OCA\WorkflowPDFConverter\AppInfo\Application::class);
