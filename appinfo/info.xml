@@ -16,6 +16,7 @@
 	<category>files</category>
 	<category>tools</category>
 	<category>organization</category>
+	<category>workflow</category>
 	<website>https://github.com/nextcloud/workflow_pdf_converter</website>
 	<bugs>https://github.com/nextcloud/workflow_pdf_converter/issues</bugs>
 	<repository type="git">https://github.com/nextcloud/workflow_pdf_converter.git</repository>
