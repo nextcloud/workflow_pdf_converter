@@ -6,8 +6,8 @@
     "Delete original, overwrite existing PDF" : "Poista alkuperäinen, korvaa olemassa oleva PDF",
     "Please choose a mode." : "Valitse tila.",
     "PDF conversion" : "PDF-muunto",
-    "Document to PDF converter" : "Asiakirjat PDF:ksi -muunto",
     "Automated PDF conversion" : "Automaattinen PDF-muunto",
-    "Rule based conversion of Documents into the PDF format" : "Asiakirjojen sääntöpohjaista muuntamista PDF-muotoon"
+    "Rule based conversion of Documents into the PDF format" : "Asiakirjojen sääntöpohjaista muuntamista PDF-muotoon",
+    "Document to PDF converter" : "Asiakirjat PDF:ksi -muunto"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }
