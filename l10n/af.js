@@ -8,7 +8,7 @@ OC.L10N.register(
     "Delete original, overwrite existing PDF" : "Skrap oorspronklike, skryf oor bestaande PDF",
     "Please choose a mode." : "Kies asb. ’n modus.",
     "PDF conversion" : "PDF-omskakeling",
-    "Document to PDF converter" : "Dokument-na-PDF-omskakelaar",
-    "Automated PDF conversion" : "Geoutomatiseerde PDF-omskakeling"
+    "Automated PDF conversion" : "Geoutomatiseerde PDF-omskakeling",
+    "Document to PDF converter" : "Dokument-na-PDF-omskakelaar"
 },
 "nplurals=2; plural=(n != 1);");
