@@ -7,6 +7,8 @@ OC.L10N.register(
     "Delete original, preserve existing PDFs" : "Ezabatu jatorrizko eta gorde dauden PDFak",
     "Delete original, overwrite existing PDF" : "Ezabatu jatorrizkoa, gainidatzi dagoen PDFa",
     "Please choose a mode." : "Hautatu modu bat",
-    "PDF conversion" : "PDF bihurketa"
+    "PDF conversion" : "PDF bihurketa",
+    "Convert documents into the PDF format on upload and write." : "Bihurtu dokumentuak PDF formatura kargatzean eta idaztean.",
+    "Automated PDF conversion" : "PDF bihurketa automatikoa"
 },
 "nplurals=2; plural=(n != 1);");
