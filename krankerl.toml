@@ -6,6 +6,7 @@ exclude = [
 	".git",
 	".github",
 	".gitignore",
+	".l10nignore",
 	".stylelintrc.js",
 	".tx",
 	"krankerl.toml",
