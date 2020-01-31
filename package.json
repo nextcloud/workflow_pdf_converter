@@ -15,7 +15,7 @@
 		"stylelint:fix": "stylelint src --fix"
 	},
 	"dependencies": {
-		"nextcloud-vue": "^0.12.11",
+		"nextcloud-vue": "^0.13.0",
 		"vue": "^2.6.11"
 	},
 	"browserslist": [
