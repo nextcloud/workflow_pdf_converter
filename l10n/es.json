@@ -1,9 +1,9 @@
 { "translations": {
     "Mode…" : "Modo...",
     "Keep original, preserve existing PDFs" : "Mantener el original, preservar los PDF existentes",
-    "Keep original, overwrite existing PDF" : "Mantener el original, sobreescribir los PDF existentes",
+    "Keep original, overwrite existing PDF" : "Mantener el original, sobreescribir el PDF existente",
     "Delete original, preserve existing PDFs" : "Borrar el original, preservar los PDF existentes",
-    "Delete original, overwrite existing PDF" : "Borrar el original, sobreescribiir los PDF existentes",
+    "Delete original, overwrite existing PDF" : "Borrar el original, sobreescribir el PDF existente",
     "Please choose a mode." : "Por favor, escoge un modo.",
     "PDF conversion" : "Conversión a PDF",
     "Convert documents into the PDF format on upload and write." : "Convierte los documentos al formato PDF al subir o escribir.",
