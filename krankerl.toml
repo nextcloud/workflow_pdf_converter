@@ -1,26 +1,4 @@
 [package]
-exclude = [
-	".babelrc.js",
-	".eslintrc.js",
-	".drone.yml",
-	".git",
-	".github",
-	".gitignore",
-	".l10nignore",
-	".stylelintrc.js",
-	".tx",
-	"krankerl.toml",
-	"node_modules",
-	"package-lock.json",
-	"package.json",
-	"README.md",
-	"screenshots",
-	"src",
-	"tests",
-	"webpack.common.js",
-	"webpack.dev.js",
-	"webpack.prod.js",
-]
 
 before_cmds = [
 	"npm ci",
