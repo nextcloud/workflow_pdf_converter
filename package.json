@@ -16,7 +16,7 @@
 	},
 	"dependencies": {
 		"nextcloud-vue": "^0.13.0",
-		"vue": "^2.6.11"
+		"vue": "^2.6.12"
 	},
 	"browserslist": [
 		"extends browserslist-config-nextcloud"
@@ -51,7 +51,7 @@
 		"stylelint-scss": "^3.18.0",
 		"stylelint-webpack-plugin": "^0.10.5",
 		"vue-loader": "^15.9.3",
-		"vue-template-compiler": "^2.6.11",
+		"vue-template-compiler": "^2.6.12",
 		"webpack": "^4.44.1",
 		"webpack-cli": "^3.3.12",
 		"webpack-merge": "^5.1.1",
