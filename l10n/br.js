@@ -2,8 +2,8 @@ OC.L10N.register(
     "workflow_pdf_converter",
     {
     "Mode…" : "Mod ...",
-    "Keep original, preserve existing PDFs" : "Gwarn an hini orin, gwarn ar PDFoù à zo",
-    "Keep original, overwrite existing PDF" : "Gwarn an hini orin, adskrivañ ar PDF a zo",
+    "Keep original, preserve existing PDFs" : "Gouarn an hini orin, gwarn ar PDFoù à zo",
+    "Keep original, overwrite existing PDF" : "Gouarn an hini orin, adskrivañ ar PDF a zo",
     "Delete original, preserve existing PDFs" : "Lemmel an hini orin, gwarn ar PDFoù a zo",
     "Delete original, overwrite existing PDF" : "Lemmel an hini orin, adskrivañ ar PDF a zo",
     "Please choose a mode." : "Chaozit ur vod mar-plij",
