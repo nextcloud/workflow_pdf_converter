@@ -1,6 +1,8 @@
 <?php
+
+declare(strict_types=1);
 /**
- * @copyright Copyright (c) 2018 Arthur Schiwon <blizzz@arthur-schiwon.de>
+ * @copyright Copyright (c) 2020 Arthur Schiwon <blizzz@arthur-schiwon.de>
  *
  * @author Arthur Schiwon <blizzz@arthur-schiwon.de>
  *
@@ -21,25 +23,29 @@
  *
  */
 
-namespace OCA\WorkflowPDFConverter\AppInfo;
+namespace OCA\WorkflowPDFConverter\Listener;
 
-use OCA\WorkflowPDFConverter\Listener\RegisterFlowOperationsListener;
-use OCP\AppFramework\App;
-use OCP\AppFramework\Bootstrap\IBootContext;
-use OCP\AppFramework\Bootstrap\IBootstrap;
-use OCP\AppFramework\Bootstrap\IRegistrationContext;
+use OCA\WorkflowPDFConverter\Operation;
+use OCP\EventDispatcher\Event;
+use OCP\EventDispatcher\IEventListener;
+use OCP\IServerContainer;
+use OCP\Util;
 use OCP\WorkflowEngine\Events\RegisterOperationsEvent;
 
-class Application extends App implements IBootstrap {
+class RegisterFlowOperationsListener implements IEventListener {
 
-	public function __construct() {
-		parent::__construct('workflow_pdf_converter');
+	/** @var IServerContainer */
+	private $container;
+
+	public function __construct(IServerContainer $container) {
+		$this->container = $container;
 	}
 
-	public function register(IRegistrationContext $context): void {
-		$context->registerEventListener(RegisterOperationsEvent::class, RegisterFlowOperationsListener::class);
-	}
-
-	public function boot(IBootContext $context): void {
+	public function handle(Event $event): void {
+		if (!$event instanceof RegisterOperationsEvent) {
+			return;
+		}
+		$event->registerOperation($this->container->get(Operation::class));
+		Util::addScript('workflow_pdf_converter', 'workflow_pdf_converter');
 	}
 }
