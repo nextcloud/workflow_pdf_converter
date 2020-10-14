@@ -9,7 +9,6 @@ OC.L10N.register(
     "Please choose a mode." : "請選擇模式。",
     "PDF conversion" : "轉換PDF",
     "Convert documents into the PDF format on upload and write." : "上載和寫入時轉換為PDF",
-    "Automated PDF conversion" : "自動PDF轉換",
-    "Document to PDF converter" : "文件至PDF轉換器"
+    "Automated PDF conversion" : "自動PDF轉換"
 },
 "nplurals=1; plural=0;");
