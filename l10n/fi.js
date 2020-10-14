@@ -9,7 +9,6 @@ OC.L10N.register(
     "Please choose a mode." : "Valitse tila.",
     "PDF conversion" : "PDF-muunto",
     "Automated PDF conversion" : "Automaattinen PDF-muunto",
-    "Rule based conversion of Documents into the PDF format" : "Asiakirjojen sääntöpohjaista muuntamista PDF-muotoon",
-    "Document to PDF converter" : "Asiakirjat PDF:ksi -muunto"
+    "Rule based conversion of Documents into the PDF format" : "Asiakirjojen sääntöpohjaista muuntamista PDF-muotoon"
 },
 "nplurals=2; plural=(n != 1);");
