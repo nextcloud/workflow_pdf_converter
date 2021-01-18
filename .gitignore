@@ -2,3 +2,4 @@ node_modules/
 build/
 composer.lock
 vendor/
+.php_cs.cache
