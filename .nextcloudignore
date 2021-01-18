@@ -19,6 +19,4 @@ src
 .stylelintrc.js
 tests
 .tx
-webpack.common.js
-webpack.dev.js
-webpack.prod.js
+webpack.js
