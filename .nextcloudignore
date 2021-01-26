@@ -1,5 +1,6 @@
 .babelrc.js
 composer.json
+composer.lock
 .drone.yml
 .eslintrc.js
 .git
