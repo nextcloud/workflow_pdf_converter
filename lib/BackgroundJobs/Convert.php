@@ -24,37 +24,54 @@
 
 namespace OCA\WorkflowPDFConverter\BackgroundJobs;
 
+use Exception;
+use OC\BackgroundJob\QueuedJob;
+use OC\Files\Filesystem;
+use OC\Files\View;
+use OCP\Files\InvalidPathException;
+use OCP\Files\IRootFolder;
 use OCP\Files\NotFoundException;
+use OCP\Files\NotPermittedException;
 use OCP\IConfig;
-use OCP\ILogger;
 use OCP\ITempManager;
+use Psr\Log\LoggerInterface;
 
-class Convert extends \OC\BackgroundJob\QueuedJob {
+class Convert extends QueuedJob {
 
 	/** @var IConfig */
 	protected $config;
-
 	/** @var ITempManager */
 	protected $tempManager;
-
-	/** @var ILogger */
+	/** @var LoggerInterface */
 	protected $logger;
+	/** @var IRootFolder */
+	private $rootFolder;
 
 	/**
 	 * BackgroundJob constructor.
 	 *
 	 * @param IConfig $config
 	 * @param ITempManager $tempManager
-	 * @param ILogger $logger
+	 * @param LoggerInterface $logger
 	 */
-	public function __construct(IConfig $config, ITempManager $tempManager, ILogger $logger) {
+	public function __construct(
+		IConfig $config,
+		ITempManager $tempManager,
+		LoggerInterface $logger,
+		IRootFolder $rootFolder
+	) {
 		$this->config = $config;
 		$this->tempManager = $tempManager;
 		$this->logger = $logger;
+		$this->rootFolder = $rootFolder;
 	}
 
 	/**
 	 * @param mixed $argument
+	 * @throws Exception
+	 * @throws InvalidPathException
+	 * @throws NotPermittedException
+	 * @throws NotFoundException
 	 */
 	protected function run($argument) {
 		$command = $this->getCommand();
@@ -70,13 +87,13 @@ class Convert extends \OC\BackgroundJob\QueuedJob {
 		$dir = dirname($path);
 		$file = basename($path);
 
-		\OC\Files\Filesystem::init($pathSegments[1], '/' . $pathSegments[1] . '/files');
+		Filesystem::init($pathSegments[1], '/' . $pathSegments[1] . '/files');
 		try {
-			$node = \OC::$server->getLazyRootFolder()->get($path);
+			$node = $this->rootFolder->get($path);
 		} catch (NotFoundException $e) {
 			return;
 		}
-		$view = new \OC\Files\View($dir);
+		$view = new View($dir);
 
 		$tmpPath = $view->toTmpFile($file);
 		$tmpDir = $this->tempManager->getTempBaseDir();
@@ -127,7 +144,7 @@ class Convert extends \OC\BackgroundJob\QueuedJob {
 		}
 	}
 
-	protected function getCommand() {
+	protected function getCommand(): ?string {
 		$libreOfficePath = $this->config->getSystemValue('preview_libreoffice_path', null);
 		if (is_string($libreOfficePath)) {
 			return escapeshellcmd($libreOfficePath);

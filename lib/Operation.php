@@ -31,12 +31,13 @@ use OCP\EventDispatcher\GenericEvent;
 use OCP\Files\Folder;
 use OCP\Files\Node;
 use OCP\IL10N;
+use OCP\IURLGenerator;
 use OCP\WorkflowEngine\IRuleMatcher;
 use OCP\WorkflowEngine\ISpecificOperation;
+use UnexpectedValueException;
 
 class Operation implements ISpecificOperation {
-
-	const MODES = [
+	public const MODES = [
 		'keep;preserve',
 		'keep;overwrite',
 		'delete;preserve',
@@ -47,19 +48,18 @@ class Operation implements ISpecificOperation {
 	private $jobList;
 	/** @var IL10N */
 	private $l;
+	/** @var IURLGenerator */
+	private $urlGenerator;
 
-	public function __construct(IJobList $jobList, IL10N $l) {
+	public function __construct(IJobList $jobList, IL10N $l, IURLGenerator $urlGenerator) {
 		$this->jobList = $jobList;
 		$this->l = $l;
+		$this->urlGenerator = $urlGenerator;
 	}
 
-	/**
-	 * @throws \UnexpectedValueException
-	 * @since 9.1
-	 */
 	public function validateOperation(string $name, array $checks, string $operation): void {
-		if(!in_array($operation, Operation::MODES)) {
-			throw new \UnexpectedValueException($this->l->t('Please choose a mode.'));
+		if (!in_array($operation, Operation::MODES)) {
+			throw new UnexpectedValueException($this->l->t('Please choose a mode.'));
 		}
 	}
 
@@ -72,7 +72,7 @@ class Operation implements ISpecificOperation {
 	}
 
 	public function getIcon(): string {
-		return \OC::$server->getURLGenerator()->imagePath('workflow_pdf_converter', 'app.svg');
+		return $this->urlGenerator->imagePath('workflow_pdf_converter', 'app.svg');
 	}
 
 	public function isAvailableForScope(int $scope): bool {
@@ -80,27 +80,27 @@ class Operation implements ISpecificOperation {
 	}
 
 	public function onEvent(string $eventName, Event $event, IRuleMatcher $ruleMatcher): void {
-		if(!$event instanceof GenericEvent) {
+		if (!$event instanceof GenericEvent) {
 			return;
 		}
 		try {
-			if($eventName === '\OCP\Files::postRename') {
+			if ($eventName === '\OCP\Files::postRename') {
 				/** @var Node $oldNode */
-				list(, $node) = $event->getSubject();
+				[, $node] = $event->getSubject();
 			} else {
 				$node = $event->getSubject();
 			}
 			/** @var Node $node */
 
 			// '', admin, 'files', 'path/to/file.txt'
-			list(,, $folder,) = explode('/', $node->getPath(), 4);
-			if($folder !== 'files' || $node instanceof Folder) {
+			[,, $folder,] = explode('/', $node->getPath(), 4);
+			if ($folder !== 'files' || $node instanceof Folder) {
 				return;
 			}
 
 			// avoid converting pdfs into pdfs - would become infinite
 			// also some types we know would not succeed
-			if($node->getMimetype() === 'application/pdf'
+			if ($node->getMimetype() === 'application/pdf'
 				|| $node->getMimePart() === 'video'
 				|| $node->getMimePart() === 'audio'
 			) {
@@ -109,27 +109,27 @@ class Operation implements ISpecificOperation {
 
 			$matches = $ruleMatcher->getFlows(false);
 			$originalFileMode = $targetPdfMode = null;
-			foreach($matches as $match) {
+			foreach ($matches as $match) {
 				$fileModes = explode(';', $match['operation']);
-				if($originalFileMode !== 'keep') {
+				if ($originalFileMode !== 'keep') {
 					$originalFileMode = $fileModes[0];
 				}
-				if($targetPdfMode !== 'preserve') {
+				if ($targetPdfMode !== 'preserve') {
 					$targetPdfMode = $fileModes[1];
 				}
-				if($originalFileMode === 'keep' && $targetPdfMode === 'preserve') {
+				if ($originalFileMode === 'keep' && $targetPdfMode === 'preserve') {
 					// most conservative setting, no need to look into other modes
 					break;
 				}
 			}
-			if(!empty($originalFileMode) && !empty($targetPdfMode)) {
+			if (!empty($originalFileMode) && !empty($targetPdfMode)) {
 				$this->jobList->add(Convert::class, [
 					'path' => $node->getPath(),
 					'originalFileMode' => $originalFileMode,
 					'targetPdfMode' => $targetPdfMode,
 				]);
 			}
-		} catch(\OCP\Files\NotFoundException $e) {
+		} catch (\OCP\Files\NotFoundException $e) {
 		}
 	}
 

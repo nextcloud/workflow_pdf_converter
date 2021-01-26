@@ -1,4 +1,5 @@
 .babelrc.js
+composer.json
 .drone.yml
 .eslintrc.js
 .git
@@ -10,12 +11,12 @@ krankerl.toml
 node_modules
 package.json
 package-lock.json
+.php_cs.cache
+.php_cs.dist
 README.md
 screenshots
 src
 .stylelintrc.js
 tests
 .tx
-webpack.common.js
-webpack.dev.js
-webpack.prod.js
+webpack.js
