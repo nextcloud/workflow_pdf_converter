@@ -1,4 +1,5 @@
 .babelrc.js
+composer.json
 .drone.yml
 .eslintrc.js
 .git
