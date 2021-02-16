@@ -6,6 +6,7 @@ OC.L10N.register(
     "Keep original, overwrite existing PDF" : "Zachowaj oryginalny, nadpisz istniejący plik PDF",
     "Delete original, preserve existing PDFs" : "Usuń oryginał, zachowaj istniejące pliki PDF",
     "Delete original, overwrite existing PDF" : "Usuń oryginał, zastąp istniejący plik PDF",
+    "_#_::_M3.21 3.043H.494l.679-1.177.68-1.176.678 1.176z_" : ["#","M3.21 3.043H.494l.679-1.177.68-1.176.678 1.176z","M3.21 3.043H.494l.679-1.177.68-1.176.678 1.176z","M3.21 3.043H.494l.679-1.177.68-1.176.678 1.176z"],
     "_http://www.w3.org/2000/svg_::_12_" : ["http://www.w3.org/2000/svg","http://www.w3.org/2000/svg","http://www.w3.org/2000/svg","12"],
     "Please choose a mode." : "Wybierz tryb.",
     "PDF conversion" : "Konwersja PDF",
