@@ -4,7 +4,6 @@
     "Keep original, overwrite existing PDF" : "Διατήρηση πρωτότυπου και αντικατάσταση υπάρχοντος PDF",
     "Delete original, preserve existing PDFs" : "Διαγραφή πρωτότυπου και διατήρηση υπάρχοντος PDFs",
     "Delete original, overwrite existing PDF" : "Διαγραφή πρωτότυπου, αντικατάσταση υπάρχοντος PDF",
-    "_icon-confirm_::_submit_" : ["icon-confirm","υποβολή"],
     "Please choose a mode." : "Παρακαλώ επιλέξτε κατάσταση.",
     "PDF conversion" : "Μετατροπή σε PDF",
     "Convert documents into the PDF format on upload and write." : "Μετατροπή εγγράφων σε μορφοποίηση PDF κατά την μεταφόρτωση και εγγραφή.",
