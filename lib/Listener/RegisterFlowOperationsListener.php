@@ -46,6 +46,6 @@ class RegisterFlowOperationsListener implements IEventListener {
 			return;
 		}
 		$event->registerOperation($this->container->get(Operation::class));
-		Util::addScript('workflow_pdf_converter', 'workflow_pdf_converter');
+		Util::addScript('workflow_pdf_converter', 'workflow_pdf_converter-main');
 	}
 }

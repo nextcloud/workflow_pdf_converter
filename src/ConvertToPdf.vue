@@ -12,20 +12,20 @@ import { Multiselect } from '@nextcloud/vue/dist/Components/Multiselect'
 const pdfConvertOptions = [
 	{
 		id: 'keep;preserve',
-		text: t('workflow_pdf_converter', 'Keep original, preserve existing PDFs')
+		text: t('workflow_pdf_converter', 'Keep original, preserve existing PDFs'),
 	},
 	{
 		id: 'keep;overwrite',
-		text: t('workflow_pdf_converter', 'Keep original, overwrite existing PDF')
+		text: t('workflow_pdf_converter', 'Keep original, overwrite existing PDF'),
 	},
 	{
 		id: 'delete;preserve',
-		text: t('workflow_pdf_converter', 'Delete original, preserve existing PDFs')
+		text: t('workflow_pdf_converter', 'Delete original, preserve existing PDFs'),
 	},
 	{
 		id: 'delete;overwrite',
-		text: t('workflow_pdf_converter', 'Delete original, overwrite existing PDF')
-	}
+		text: t('workflow_pdf_converter', 'Delete original, overwrite existing PDF'),
+	},
 ]
 export default {
 	name: 'ConvertToPdf',
@@ -33,12 +33,12 @@ export default {
 	props: {
 		value: {
 			default: pdfConvertOptions[0],
-			type: String
-		}
+			type: String,
+		},
 	},
 	data() {
 		return {
-			options: pdfConvertOptions
+			options: pdfConvertOptions,
 		}
 	},
 	computed: {
@@ -48,8 +48,8 @@ export default {
 				return pdfConvertOptions[0]
 			}
 			return newValue
-		}
-	}
+		},
+	},
 }
 </script>
 
