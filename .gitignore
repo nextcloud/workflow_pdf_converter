@@ -1,4 +1,5 @@
 node_modules/
 build/
 vendor/
+js/
 .php_cs.cache
