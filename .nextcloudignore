@@ -1,3 +1,4 @@
+babel.config.js
 .babelrc.js
 composer.json
 composer.lock
@@ -18,6 +19,7 @@ README.md
 screenshots
 src
 .stylelintrc.js
+stylelint.config.js
 tests
 .tx
 webpack.js
