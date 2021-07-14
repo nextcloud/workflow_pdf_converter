@@ -11340,7 +11340,9 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports.default = void 0;
 
-var _Multiselect = __webpack_require__(/*! @nextcloud/vue/dist/Components/Multiselect */ "./node_modules/@nextcloud/vue/dist/Components/Multiselect.js");
+var _Multiselect = _interopRequireDefault(__webpack_require__(/*! @nextcloud/vue/dist/Components/Multiselect */ "./node_modules/@nextcloud/vue/dist/Components/Multiselect.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 //
 //
@@ -11366,7 +11368,7 @@ const pdfConvertOptions = [{
 var _default = {
   name: 'ConvertToPdf',
   components: {
-    Multiselect: _Multiselect.Multiselect
+    Multiselect: _Multiselect.default
   },
   props: {
     value: {
@@ -41864,4 +41866,4 @@ OCA.WorkflowEngine.registerOperator({
 
 /******/ })()
 ;
-//# sourceMappingURL=workflow_pdf_converter-main.js.map?v=30cdffddc53b38db2250
+//# sourceMappingURL=workflow_pdf_converter-main.js.map?v=9b58334e9431e28a1a47
