@@ -1,16 +1,16 @@
 OC.L10N.register(
     "workflow_pdf_converter",
     {
-    "Mode…" : "Mód…",
-    "Keep original, preserve existing PDFs" : "Eredeti megtartása, meglévő PDF-ek megőrzése",
-    "Keep original, overwrite existing PDF" : "Eredeti megtartása, meglévő PDF-ek felülírása",
-    "Delete original, preserve existing PDFs" : "Eredeti törlése, meglévő PDF-ek megőrzése",
-    "Delete original, overwrite existing PDF" : "Eredeti törlése, meglévő PDF-ek felülírása",
     "Please choose a mode." : "Válasszon egy módot.",
     "PDF conversion" : "PDF-átalakítás",
     "Convert documents into the PDF format on upload and write." : "Dokumentumok PDF formátumba alakítása feltöltéskor és íráskor.",
     "Automated PDF conversion" : "Automatizált PDF-átalakítás",
     "Rule based conversion of Documents into the PDF format" : "Dokumentumok szabályok alapján történő PDF formátumba alakítása",
-    "An app to trigger automatic conversion of documents to PDF. Based on admin defined rules, a background job file be set up when a matching file was created or written, or was assigned a tag. Then, LibreOffice is being utilized for converting the document." : "Ez egy alkalmazás, amivel a dokumentumok automatikusan átalakíthatóak  PDF formátumba. A rendszergazda által létrehozott szabályok alapján, egy háttérfolyamati fájl jön létre egy megfelelő fájl létrehozásakor illetve írásakor, vagy ha címke lett hozzárendelve. Ezután a LibreOffice segítségével átalakítja a dokumentumot."
+    "An app to trigger automatic conversion of documents to PDF. Based on admin defined rules, a background job file be set up when a matching file was created or written, or was assigned a tag. Then, LibreOffice is being utilized for converting the document." : "Ez egy alkalmazás, amivel a dokumentumok automatikusan átalakíthatóak  PDF formátumba. A rendszergazda által létrehozott szabályok alapján, egy háttérfolyamati fájl jön létre egy megfelelő fájl létrehozásakor illetve írásakor, vagy ha címke lett hozzárendelve. Ezután a LibreOffice segítségével átalakítja a dokumentumot.",
+    "Keep original, preserve existing PDFs" : "Eredeti megtartása, meglévő PDF-ek megőrzése",
+    "Keep original, overwrite existing PDF" : "Eredeti megtartása, meglévő PDF-ek felülírása",
+    "Delete original, preserve existing PDFs" : "Eredeti törlése, meglévő PDF-ek megőrzése",
+    "Delete original, overwrite existing PDF" : "Eredeti törlése, meglévő PDF-ek felülírása",
+    "Mode…" : "Mód…"
 },
 "nplurals=2; plural=(n != 1);");
