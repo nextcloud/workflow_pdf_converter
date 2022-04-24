@@ -3,6 +3,7 @@ OC.L10N.register(
     {
     "Please choose a mode." : "Valitse tila.",
     "PDF conversion" : "PDF-muunto",
+    "Convert documents into the PDF format on upload and write." : "Muunna asiakirjat PDF-formaattiin latausvaiheessa ja kirjoita.",
     "Automated PDF conversion" : "Automaattinen PDF-muunto",
     "Rule based conversion of Documents into the PDF format" : "Asiakirjojen sääntöpohjaista muuntamista PDF-muotoon",
     "Keep original, preserve existing PDFs" : "Pidä alkuperäinen, säilytä olemassa olevat PDF:t",
