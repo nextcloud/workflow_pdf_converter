@@ -9,7 +9,6 @@ OC.L10N.register(
     "Keep original, preserve existing PDFs" : "اصلی را حفظ کنید ، PDF های موجود را حفظ کنید",
     "Keep original, overwrite existing PDF" : "اصل را نگه دارید ، PDF موجود را رونویسی کنید",
     "Delete original, preserve existing PDFs" : "حذف اصلی ، حفظ PDF های موجود",
-    "Delete original, overwrite existing PDF" : "اصلی را حذف کنید ، PDF موجود را رونویسی کنید",
-    "Mode…" : "حالت ..."
+    "Delete original, overwrite existing PDF" : "اصلی را حذف کنید ، PDF موجود را رونویسی کنید"
 },
 "nplurals=2; plural=(n > 1);");

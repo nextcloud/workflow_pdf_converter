@@ -1,6 +1,7 @@
 OC.L10N.register(
     "workflow_pdf_converter",
     {
+    "Please choose a mode." : "Будь ласка, оберіть режим",
     "PDF conversion" : "Конвертування PDF",
     "Automated PDF conversion" : "Автоматичне конвертування PDF"
 },

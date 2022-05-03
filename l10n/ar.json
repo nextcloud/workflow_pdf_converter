@@ -8,7 +8,6 @@
     "Keep original, preserve existing PDFs" : "احتفظ بالأصل، واحتفظ بملفات PDF الموجودة",
     "Keep original, overwrite existing PDF" : "احتفظ بالأصل، و غير على ملف ال PDF الموجود",
     "Delete original, preserve existing PDFs" : "امسح الأصل، واحتفظ بملفات ال PDF الموجودة",
-    "Delete original, overwrite existing PDF" : "امسح الأصل، و غير على ملف ال PDF الموجود",
-    "Mode…" : "المزيد"
+    "Delete original, overwrite existing PDF" : "امسح الأصل، و غير على ملف ال PDF الموجود"
 },"pluralForm" :"nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;"
 }
