@@ -10,7 +10,6 @@ OC.L10N.register(
     "Keep original, preserve existing PDFs" : "Behåll originalet, bevara befintliga PDF-filer",
     "Keep original, overwrite existing PDF" : "Behåll originalet, skriv över befintlig PDF",
     "Delete original, preserve existing PDFs" : "Ta bort originalet, bevara befintliga PDF-filer",
-    "Delete original, overwrite existing PDF" : "Ta bort originalet, skriv över befintlig PDF",
-    "Mode…" : "Läge..."
+    "Delete original, overwrite existing PDF" : "Ta bort originalet, skriv över befintlig PDF"
 },
 "nplurals=2; plural=(n != 1);");

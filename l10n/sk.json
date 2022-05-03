@@ -8,7 +8,6 @@
     "Keep original, preserve existing PDFs" : "Ponechať originál, zachovať existujúce PDF",
     "Keep original, overwrite existing PDF" : "Ponechať originál, prepísať existujúce PDF",
     "Delete original, preserve existing PDFs" : "Zmazať originál, zachovať existujúce PDF",
-    "Delete original, overwrite existing PDF" : "Zmazať originál, prepísať existujúce PDF",
-    "Mode…" : "Režim..."
+    "Delete original, overwrite existing PDF" : "Zmazať originál, prepísať existujúce PDF"
 },"pluralForm" :"nplurals=4; plural=(n % 1 == 0 && n == 1 ? 0 : n % 1 == 0 && n >= 2 && n <= 4 ? 1 : n % 1 != 0 ? 2: 3);"
 }

@@ -10,7 +10,6 @@ OC.L10N.register(
     "Keep original, preserve existing PDFs" : "Сачувај оригинал, очувај постојеће PDF-ове",
     "Keep original, overwrite existing PDF" : "Сачувај оригинал, препиши преко постојећих PDF-ова",
     "Delete original, preserve existing PDFs" : "Обриши оригинал, очувај постојеће PDF-ове",
-    "Delete original, overwrite existing PDF" : "Обриши оригинал, препиши преко постојећих PDF-ова",
-    "Mode…" : "Режим…"
+    "Delete original, overwrite existing PDF" : "Обриши оригинал, препиши преко постојећих PDF-ова"
 },
 "nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);");
