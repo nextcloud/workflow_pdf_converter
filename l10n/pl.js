@@ -10,7 +10,6 @@ OC.L10N.register(
     "Keep original, preserve existing PDFs" : "Zachowaj oryginalne, zatrzymaj istniejące pliki PDF",
     "Keep original, overwrite existing PDF" : "Zachowaj oryginalny, nadpisz istniejący plik PDF",
     "Delete original, preserve existing PDFs" : "Usuń oryginał, zachowaj istniejące pliki PDF",
-    "Delete original, overwrite existing PDF" : "Usuń oryginał, zastąp istniejący plik PDF",
-    "Mode…" : "Tryb…"
+    "Delete original, overwrite existing PDF" : "Usuń oryginał, zastąp istniejący plik PDF"
 },
 "nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);");

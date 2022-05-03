@@ -10,7 +10,6 @@ OC.L10N.register(
     "Keep original, preserve existing PDFs" : "オリジナルを保持し、既存のPDFを保持する",
     "Keep original, overwrite existing PDF" : "オリジナルを保持し、既存のPDFを上書きする",
     "Delete original, preserve existing PDFs" : "オリジナルを削除し、既存のPDFを保持する",
-    "Delete original, overwrite existing PDF" : "オリジナルを削除し、既存のPDFを上書きする",
-    "Mode…" : "モード…"
+    "Delete original, overwrite existing PDF" : "オリジナルを削除し、既存のPDFを上書きする"
 },
 "nplurals=1; plural=0;");

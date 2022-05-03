@@ -10,7 +10,6 @@ OC.L10N.register(
     "Keep original, preserve existing PDFs" : "Mantene s'originale, alloga is PDF chi esistint",
     "Keep original, overwrite existing PDF" : "Mantene s'originale, subraiscrie su PDF chi esistit",
     "Delete original, preserve existing PDFs" : "Cantzella s'originale, alloga is PDF chi esistint",
-    "Delete original, overwrite existing PDF" : "Cantzella s'originale, subraiscrie su PDF chi esistit",
-    "Mode…" : "Modalidade..."
+    "Delete original, overwrite existing PDF" : "Cantzella s'originale, subraiscrie su PDF chi esistit"
 },
 "nplurals=2; plural=(n != 1);");

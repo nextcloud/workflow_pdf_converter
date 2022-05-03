@@ -10,7 +10,6 @@ OC.L10N.register(
     "Keep original, preserve existing PDFs" : "Ponechat originál, zachovat existující PDF soubory",
     "Keep original, overwrite existing PDF" : "Ponechat originál, přepsat existující PDF soubory",
     "Delete original, preserve existing PDFs" : "Smazat originál, zachovat existující PDF soubory",
-    "Delete original, overwrite existing PDF" : "Smazat originál, přepsat existující PDF soubory",
-    "Mode…" : "Režim…"
+    "Delete original, overwrite existing PDF" : "Smazat originál, přepsat existující PDF soubory"
 },
 "nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;");

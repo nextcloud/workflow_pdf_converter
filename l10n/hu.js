@@ -10,7 +10,6 @@ OC.L10N.register(
     "Keep original, preserve existing PDFs" : "Eredeti megtartása, meglévő PDF-ek megőrzése",
     "Keep original, overwrite existing PDF" : "Eredeti megtartása, meglévő PDF-ek felülírása",
     "Delete original, preserve existing PDFs" : "Eredeti törlése, meglévő PDF-ek megőrzése",
-    "Delete original, overwrite existing PDF" : "Eredeti törlése, meglévő PDF-ek felülírása",
-    "Mode…" : "Mód…"
+    "Delete original, overwrite existing PDF" : "Eredeti törlése, meglévő PDF-ek felülírása"
 },
 "nplurals=2; plural=(n != 1);");

@@ -8,7 +8,6 @@
     "Keep original, preserve existing PDFs" : "保留原始文件，保留现有的 PDF",
     "Keep original, overwrite existing PDF" : "保留原始文件，覆盖现有的 PDF",
     "Delete original, preserve existing PDFs" : "删除原始文件，保留现有的 PDF",
-    "Delete original, overwrite existing PDF" : "删除原始文件，覆盖现有的 PDF",
-    "Mode…" : "模式…"
+    "Delete original, overwrite existing PDF" : "删除原始文件，覆盖现有的 PDF"
 },"pluralForm" :"nplurals=1; plural=0;"
 }

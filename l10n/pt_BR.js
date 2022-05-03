@@ -10,7 +10,6 @@ OC.L10N.register(
     "Keep original, preserve existing PDFs" : "Mantenha original, preserve os PDFs existentes",
     "Keep original, overwrite existing PDF" : "Manter o original, sobrescrever PDFs existentes",
     "Delete original, preserve existing PDFs" : "Excluir original, preservar PDFs existentes",
-    "Delete original, overwrite existing PDF" : "Excluir original, sobrescrever PDFs existentes",
-    "Mode…" : "Modo..."
+    "Delete original, overwrite existing PDF" : "Excluir original, sobrescrever PDFs existentes"
 },
 "nplurals=2; plural=(n > 1);");

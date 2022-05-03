@@ -8,7 +8,6 @@
     "Keep original, preserve existing PDFs" : "Mantendu jatorrizkoak eta babestu lehendik dauden PDFak",
     "Keep original, overwrite existing PDF" : "Mantendu jatorrizkoa eta gainidatzi dagoen PDFa",
     "Delete original, preserve existing PDFs" : "Ezabatu jatorrizkoa eta gorde lehendik dauden PDFak",
-    "Delete original, overwrite existing PDF" : "Ezabatu jatorrizkoa, gainidatzi dagoen PDFa",
-    "Mode…" : "Modua..."
+    "Delete original, overwrite existing PDF" : "Ezabatu jatorrizkoa, gainidatzi dagoen PDFa"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

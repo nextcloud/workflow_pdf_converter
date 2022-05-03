@@ -10,7 +10,6 @@ OC.L10N.register(
     "Keep original, preserve existing PDFs" : "Halda upprunalegu, vernda fyrirliggjandi PDF-skrár",
     "Keep original, overwrite existing PDF" : "Halda upprunalegu, skrifa yfir fyrirliggjandi PDF-skrár",
     "Delete original, preserve existing PDFs" : "Eyða upprunalegu, vernda fyrirliggjandi PDF-skrár",
-    "Delete original, overwrite existing PDF" : "Eyða upprunalegu, skrifa yfir fyrirliggjandi PDF-skrár",
-    "Mode…" : "Hamur…"
+    "Delete original, overwrite existing PDF" : "Eyða upprunalegu, skrifa yfir fyrirliggjandi PDF-skrár"
 },
 "nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);");
