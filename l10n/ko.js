@@ -10,7 +10,6 @@ OC.L10N.register(
     "Keep original, preserve existing PDFs" : "원본 유지, 기존 PDF 유지",
     "Keep original, overwrite existing PDF" : "원본 유지, 기존 PDF 덮어쓰기",
     "Delete original, preserve existing PDFs" : "원본 삭제, 기존 PDF 유지",
-    "Delete original, overwrite existing PDF" : "원본 삭제, 기존 PDF 덮어쓰기",
-    "Mode…" : "모드…"
+    "Delete original, overwrite existing PDF" : "원본 삭제, 기존 PDF 덮어쓰기"
 },
 "nplurals=1; plural=0;");

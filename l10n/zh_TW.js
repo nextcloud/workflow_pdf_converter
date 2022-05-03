@@ -10,7 +10,6 @@ OC.L10N.register(
     "Keep original, preserve existing PDFs" : "保留原文件，留存已存在PDF檔",
     "Keep original, overwrite existing PDF" : "保留原文件，覆蓋已存在PDF檔",
     "Delete original, preserve existing PDFs" : "刪除原文件，留存已存在PDF檔",
-    "Delete original, overwrite existing PDF" : "刪除原文件，覆蓋已存在PDF檔",
-    "Mode…" : "模式…"
+    "Delete original, overwrite existing PDF" : "刪除原文件，覆蓋已存在PDF檔"
 },
 "nplurals=1; plural=0;");
