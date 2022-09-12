@@ -44,12 +44,9 @@ class Operation implements ISpecificOperation {
 		'delete;overwrite',
 	];
 
-	/** @var IJobList */
-	private $jobList;
-	/** @var IL10N */
-	private $l;
-	/** @var IURLGenerator */
-	private $urlGenerator;
+	private IJobList $jobList;
+	private IL10N $l;
+	private IURLGenerator $urlGenerator;
 
 	public function __construct(IJobList $jobList, IL10N $l, IURLGenerator $urlGenerator) {
 		$this->jobList = $jobList;
