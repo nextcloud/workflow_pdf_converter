@@ -38,7 +38,6 @@ use OCP\ITempManager;
 use Psr\Log\LoggerInterface;
 
 class Convert extends QueuedJob {
-
 	protected IConfig $config;
 	protected ITempManager $tempManager;
 	protected LoggerInterface $logger;
