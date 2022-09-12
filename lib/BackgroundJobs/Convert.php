@@ -25,7 +25,8 @@
 namespace OCA\WorkflowPDFConverter\BackgroundJobs;
 
 use Exception;
-use OC\BackgroundJob\QueuedJob;
+use OCP\AppFramework\Utility\ITimeFactory;
+use OCP\BackgroundJob\QueuedJob;
 use OC\Files\Filesystem;
 use OC\Files\View;
 use OCP\Files\InvalidPathException;
@@ -37,29 +38,19 @@ use OCP\ITempManager;
 use Psr\Log\LoggerInterface;
 
 class Convert extends QueuedJob {
+	protected IConfig $config;
+	protected ITempManager $tempManager;
+	protected LoggerInterface $logger;
+	private IRootFolder $rootFolder;
 
-	/** @var IConfig */
-	protected $config;
-	/** @var ITempManager */
-	protected $tempManager;
-	/** @var LoggerInterface */
-	protected $logger;
-	/** @var IRootFolder */
-	private $rootFolder;
-
-	/**
-	 * BackgroundJob constructor.
-	 *
-	 * @param IConfig $config
-	 * @param ITempManager $tempManager
-	 * @param LoggerInterface $logger
-	 */
 	public function __construct(
 		IConfig $config,
 		ITempManager $tempManager,
 		LoggerInterface $logger,
-		IRootFolder $rootFolder
+		IRootFolder $rootFolder,
+		ITimeFactory $timeFactory
 	) {
+		parent::__construct($timeFactory);
 		$this->config = $config;
 		$this->tempManager = $tempManager;
 		$this->logger = $logger;
