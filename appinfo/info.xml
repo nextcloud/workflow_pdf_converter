@@ -5,7 +5,7 @@
 	<name>Automated PDF conversion</name>
 	<summary>Rule based conversion of Documents into the PDF format</summary>
 	<description>An app to trigger automatic conversion of documents to PDF. Based on admin defined rules, a background job file be set up when a matching file was created or written, or was assigned a tag. Then, LibreOffice is being utilized for converting the document.</description>
-	<version>1.10.0</version>
+	<version>1.11.0</version>
 	<licence>agpl</licence>
 	<author mail="coding@schilljs.com">Joas Schilling</author>
 	<author mail="blizzz@arthur-schiwon.de">Arthur Schiwon</author>
@@ -23,6 +23,6 @@
 	<screenshot>https://raw.githubusercontent.com/nextcloud/workflow_pdf_converter/master/screenshots/flow-settings-ui.png</screenshot>
 	<screenshot small-thumbnail="https://raw.githubusercontent.com/nextcloud/workflow_pdf_converter/master/screenshots/management-apps_small.png">https://raw.githubusercontent.com/nextcloud/workflow_pdf_converter/master/screenshots/management-apps.png</screenshot>
 	<dependencies>
-		<nextcloud min-version="25" max-version="25" />
+		<nextcloud min-version="26" max-version="26" />
 	</dependencies>
 </info>
