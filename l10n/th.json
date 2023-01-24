@@ -1,6 +1,6 @@
 { "translations": {
     "Please choose a mode." : "โปรดเลือกโหมด",
-    "PDF conversion" : "แปลง PDF",
+    "PDF conversion" : "การแปลง PDF",
     "Automated PDF conversion" : "แปลงเอกสาร PDF อัตโนมัติ"
 },"pluralForm" :"nplurals=1; plural=0;"
 }
