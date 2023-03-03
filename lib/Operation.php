@@ -28,6 +28,7 @@ use OCA\WorkflowPDFConverter\BackgroundJobs\Convert;
 use OCP\BackgroundJob\IJobList;
 use OCP\EventDispatcher\Event;
 use OCP\EventDispatcher\GenericEvent;
+use OCP\SystemTag\MapperEvent as TagMapperEvent;
 use OCP\Files\Folder;
 use OCP\Files\Node;
 use OCP\IL10N;
@@ -77,54 +78,65 @@ class Operation implements ISpecificOperation {
 	}
 
 	public function onEvent(string $eventName, Event $event, IRuleMatcher $ruleMatcher): void {
-		if (!$event instanceof GenericEvent) {
+		if (!($event instanceof GenericEvent || $event instanceof TagMapperEvent)) {
 			return;
 		}
 		try {
-			if ($eventName === '\OCP\Files::postRename') {
+			if ($event instanceof TagMapperEvent) {
+				/** @var TagMapperEvent $event */
+				if ($event->getObjectType() !== 'files') {
+					return;
+				}
+				$fileId = $event->getObjectId();
+				$nodes = \OC::$server->getUserFolder()->getById((int)$fileId);
+			} elseif ($eventName === '\OCP\Files::postRename') {
 				/** @var Node $oldNode */
 				[, $node] = $event->getSubject();
+				$nodes = [ $node ];
 			} else {
 				$node = $event->getSubject();
+				$nodes = [ $node ];
 			}
 			/** @var Node $node */
+			foreach ($nodes as $node) {
 
-			// '', admin, 'files', 'path/to/file.txt'
-			[,, $folder,] = explode('/', $node->getPath(), 4);
-			if ($folder !== 'files' || $node instanceof Folder) {
-				return;
-			}
+				// '', admin, 'files', 'path/to/file.txt'
+				[,, $folder,] = explode('/', $node->getPath(), 4);
+				if ($folder !== 'files' || $node instanceof Folder) {
+					return;
+				}
 
-			// avoid converting pdfs into pdfs - would become infinite
-			// also some types we know would not succeed
-			if ($node->getMimetype() === 'application/pdf'
-				|| $node->getMimePart() === 'video'
-				|| $node->getMimePart() === 'audio'
-			) {
-				return;
-			}
+				// avoid converting pdfs into pdfs - would become infinite
+				// also some types we know would not succeed
+				if ($node->getMimetype() === 'application/pdf'
+					|| $node->getMimePart() === 'video'
+					|| $node->getMimePart() === 'audio'
+				) {
+					return;
+				}
 
-			$matches = $ruleMatcher->getFlows(false);
-			$originalFileMode = $targetPdfMode = null;
-			foreach ($matches as $match) {
-				$fileModes = explode(';', $match['operation']);
-				if ($originalFileMode !== 'keep') {
-					$originalFileMode = $fileModes[0];
+				$matches = $ruleMatcher->getFlows(false);
+				$originalFileMode = $targetPdfMode = null;
+				foreach ($matches as $match) {
+					$fileModes = explode(';', $match['operation']);
+					if ($originalFileMode !== 'keep') {
+						$originalFileMode = $fileModes[0];
+					}
+					if ($targetPdfMode !== 'preserve') {
+						$targetPdfMode = $fileModes[1];
+					}
+					if ($originalFileMode === 'keep' && $targetPdfMode === 'preserve') {
+						// most conservative setting, no need to look into other modes
+						break;
+					}
 				}
-				if ($targetPdfMode !== 'preserve') {
-					$targetPdfMode = $fileModes[1];
+				if (!empty($originalFileMode) && !empty($targetPdfMode)) {
+					$this->jobList->add(Convert::class, [
+						'path' => $node->getPath(),
+						'originalFileMode' => $originalFileMode,
+						'targetPdfMode' => $targetPdfMode,
+					]);
 				}
-				if ($originalFileMode === 'keep' && $targetPdfMode === 'preserve') {
-					// most conservative setting, no need to look into other modes
-					break;
-				}
-			}
-			if (!empty($originalFileMode) && !empty($targetPdfMode)) {
-				$this->jobList->add(Convert::class, [
-					'path' => $node->getPath(),
-					'originalFileMode' => $originalFileMode,
-					'targetPdfMode' => $targetPdfMode,
-				]);
 			}
 		} catch (\OCP\Files\NotFoundException $e) {
 		}
