@@ -4,12 +4,19 @@
 		"cs:fix": "php-cs-fixer fix",
 		"lint": "find . -name \\*.php -not -path './vendor/*' -not -path './build/*' -print0 | xargs -0 -n1 php -l"
 	},
-    "require-dev": {
+	"require-dev": {
 		"nextcloud/coding-standard": "^1.0.0"
 	},
 	"config": {
+		"autoloader-suffix": "WorkflowPDFConverter",
+		"optimize-autoloader": true,
 		"platform": {
 			"php": "8.0"
+		}
+	},
+	"autoload": {
+		"psr-4": {
+			"OCA\\WorkflowPDFConverter\\": "lib/"
 		}
 	}
 }
