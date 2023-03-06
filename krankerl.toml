@@ -1,6 +1,7 @@
 [package]
 
 before_cmds = [
+	"composer i --no-dev -a",
 	"npm ci",
 	"npm run build",
 ]
