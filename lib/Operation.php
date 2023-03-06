@@ -81,7 +81,7 @@ class Operation implements ISpecificOperation {
 			return;
 		}
 		try {
-			if ($eventName === '\OCP\Files::postRename') {
+			if ($eventName === '\OCP\Files::postRename' || $eventName === '\OCP\Files::postCopy') {
 				/** @var Node $oldNode */
 				[, $node] = $event->getSubject();
 			} else {
