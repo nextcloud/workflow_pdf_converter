@@ -13,8 +13,8 @@ krankerl.toml
 node_modules
 package.json
 package-lock.json
-.php_cs.cache
-.php_cs.dist
+.php-cs-fixer.cache
+.php-cs-fixer.dist.php
 README.md
 screenshots
 src
