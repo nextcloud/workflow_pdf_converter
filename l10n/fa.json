@@ -4,6 +4,7 @@
     "Convert documents into the PDF format on upload and write." : "اسناد را به قالب PDF در بارگذاری و نوشتن تبدیل کنید.",
     "Automated PDF conversion" : "تبدیل خودکار PDF",
     "Rule based conversion of Documents into the PDF format" : "تبدیل اسناد به فرمت PDF بر اساس قانون",
+    "An app to trigger automatic conversion of documents to PDF. Based on admin defined rules, a background job file be set up when a matching file was created or written, or was assigned a tag. Then, LibreOffice is being utilized for converting the document." : "An app to trigger automatic conversion of documents to PDF. Based on admin defined rules, a background job file be set up when a matching file was created or written, or was assigned a tag. Then, LibreOffice is being utilized for converting the document.",
     "Keep original, preserve existing PDFs" : "اصلی را حفظ کنید ، PDF های موجود را حفظ کنید",
     "Keep original, overwrite existing PDF" : "اصل را نگه دارید ، PDF موجود را رونویسی کنید",
     "Delete original, preserve existing PDFs" : "حذف اصلی ، حفظ PDF های موجود",
