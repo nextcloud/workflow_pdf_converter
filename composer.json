@@ -2,16 +2,22 @@
 	"scripts": {
 		"cs:check": "php-cs-fixer fix --dry-run --diff",
 		"cs:fix": "php-cs-fixer fix",
-		"lint": "find . -name \\*.php -not -path './vendor/*' -not -path './build/*' -print0 | xargs -0 -n1 php -l"
+		"lint": "find . -name \\*.php -not -path './vendor/*' -not -path './build/*' -print0 | xargs -0 -n1 php -l",
+		"psalm": "psalm --threads=1",
+                "psalm:update-baseline": "psalm --update-baseline --set-baseline=tests/psalm-baseline.xml",
+                "psalm:clear": "psalm --clear-cache && psalm --clear-global-cache",
+                "psalm:fix": "psalm --alter --issues=InvalidReturnType,InvalidNullableReturnType,MissingParamType,InvalidFalsableReturnType"
 	},
 	"require-dev": {
-		"nextcloud/coding-standard": "^1.0.0"
+		"nextcloud/coding-standard": "^1.1",
+		"nextcloud/ocp": "dev-master",
+		"vimeo/psalm": "^5"
 	},
 	"config": {
 		"autoloader-suffix": "WorkflowPDFConverter",
 		"optimize-autoloader": true,
 		"platform": {
-			"php": "8.0"
+			"php": "8.0.2"
 		}
 	},
 	"autoload": {

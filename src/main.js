@@ -1,4 +1,4 @@
-import ConvertToPdf from './ConvertToPdf'
+import ConvertToPdf from './ConvertToPdf.vue'
 
 OCA.WorkflowEngine.registerOperator({
 	id: 'OCA\\WorkflowPDFConverter\\Operation',
