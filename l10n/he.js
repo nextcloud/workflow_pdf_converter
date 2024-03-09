@@ -12,4 +12,4 @@ OC.L10N.register(
     "Delete original, preserve existing PDFs" : "למחוק את המקור, לשמר קובצי PDF קיימים",
     "Delete original, overwrite existing PDF" : "למחוק את המקור, לדרוס קובצי PDF קיימים"
 },
-"nplurals=3; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;");
+"nplurals=3; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: 2;");
