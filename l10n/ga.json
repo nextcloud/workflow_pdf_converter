@@ -1,0 +1,13 @@
+{ "translations": {
+    "Please choose a mode." : "Roghnaigh mód le do thoil.",
+    "PDF conversion" : "Comhshó PDF",
+    "Convert documents into the PDF format on upload and write." : "Tiontaigh na doiciméid go formáid PDF ar uaslódáil agus scríobh.",
+    "Automated PDF conversion" : "Comhshó uathoibrithe pdf",
+    "Rule based conversion of Documents into the PDF format" : "Comhshó doiciméad atá bunaithe ar rialacha i bhformáid PDF",
+    "An app to trigger automatic conversion of documents to PDF. Based on admin defined rules, a background job file be set up when a matching file was created or written, or was assigned a tag. Then, LibreOffice is being utilized for converting the document." : "Aip chun tiontú uathoibríoch doiciméad go PDF a spreagadh. Bunaithe ar rialacha sainithe ag riarthóir, socrófar comhad poist chúlra nuair a cruthaíodh nó nuair a scríobhtar comhad meaitseála, nó nuair a sanntar clib dó. Ansin, tá LibreOffice á úsáid chun an doiciméad a thiontú.",
+    "Keep original, preserve existing PDFs" : "Coinnigh an leagan bunaidh, coimeád na PDFanna atá ann cheana féin",
+    "Keep original, overwrite existing PDF" : "Coinnigh an leagan bunaidh, scríobh an PDF atá ann cheana féin",
+    "Delete original, preserve existing PDFs" : "Scrios an bhunaidh, caomhnaigh na PDFanna atá ann cheana",
+    "Delete original, overwrite existing PDF" : "Scrios an leagan bunaidh, scríobh an PDF atá ann cheana féin"
+},"pluralForm" :"nplurals=5; plural=(n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n<11 ? 3 : 4);"
+}
