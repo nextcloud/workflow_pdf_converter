@@ -1,5 +1,5 @@
 <template>
-	<Multiselect :value="currentValue"
+	<NcSelect :value="currentValue"
 		:options="options"
 		track-by="id"
 		label="text"
@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import Multiselect from '@nextcloud/vue/dist/Components/Multiselect.js'
+import NcSelect from '@nextcloud/vue/dist/Components/NcSelect.js'
 
 const pdfConvertOptions = [
 	{
@@ -29,7 +29,7 @@ const pdfConvertOptions = [
 ]
 export default {
 	name: 'ConvertToPdf',
-	components: { Multiselect },
+	components: { NcSelect },
 	props: {
 		value: {
 			default: pdfConvertOptions[0],
