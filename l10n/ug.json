@@ -1,0 +1,13 @@
+{ "translations": {
+    "Please choose a mode." : "بىر ھالەتنى تاللاڭ.",
+    "PDF conversion" : "PDF ئايلاندۇرۇش",
+    "Convert documents into the PDF format on upload and write." : "ھۆججەتلەرنى يۈكلەش ۋە يېزىشتىكى PDF فورماتىغا ئايلاندۇرۇڭ.",
+    "Automated PDF conversion" : "ئاپتوماتىك PDF ئايلاندۇرۇش",
+    "Rule based conversion of Documents into the PDF format" : "ھۆججەتلەرنى PDF فورماتىغا ئايلاندۇرۇش قائىدىسى",
+    "An app to trigger automatic conversion of documents to PDF. Based on admin defined rules, a background job file be set up when a matching file was created or written, or was assigned a tag. Then, LibreOffice is being utilized for converting the document." : "ھۆججەتلەرنىڭ PDF غا ئاپتوماتىك ئايلىنىشىنى قوزغىتىدىغان ئەپ. باشقۇرغۇچى بەلگىلىگەن قائىدىلەرگە ئاساسەن ، ماس ھۆججەت قۇرۇلغاندا ياكى يازغاندا ياكى بەلگە تەقسىم قىلىنغاندا تەگلىك خىزمەت ھۆججىتى قۇرۇلدى. ئاندىن ، LibreOffice ھۆججەتنى ئۆزگەرتىشكە ئىشلىتىلىدۇ.",
+    "Keep original, preserve existing PDFs" : "ئەسلى ساقلاڭ ، مەۋجۇت PDF نى ساقلاڭ",
+    "Keep original, overwrite existing PDF" : "ئەسلى ساقلاڭ ، مەۋجۇت PDF نى قاپلىۋېلىڭ",
+    "Delete original, preserve existing PDFs" : "ئەسلى ئۆچۈرۈڭ ، مەۋجۇت PDF نى ساقلاڭ",
+    "Delete original, overwrite existing PDF" : "ئەسلى ئۆچۈرۈڭ ، مەۋجۇت PDF نى قاپلىۋېلىڭ"
+},"pluralForm" :"nplurals=2; plural=(n != 1);"
+}
