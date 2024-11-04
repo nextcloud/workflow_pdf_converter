@@ -1,4 +1,10 @@
+<!--
+  - SPDX-FileCopyrightText: 2018 Nextcloud GmbH and Nextcloud contributors
+  - SPDX-License-Identifier: AGPL-3.0-or-later
+-->
 # Nextcloud PDF Converter app
+
+[![REUSE status](https://api.reuse.software/badge/github.com/nextcloud/workflow_pdf_converter)](https://api.reuse.software/info/github.com/nextcloud/workflow_pdf_converter)
 
 This app lets Nextcloud automatically convert documents to PDF. By utilizing the workflow engine it allows Nextcloud administrators to define rules upon which various documents are enqueued to be converted to PDF. Eventually, the conversion happens in a background job by feeding the source file to the found or specific `libreoffice` or `openoffice` binary. Depending on the selected behaviour the source file can either be kept or deleted and the resulting PDFs can either be preserved by increasing a number added to the filename or overwritten.
 
