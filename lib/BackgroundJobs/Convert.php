@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @copyright Copyright (c) 2018 Joas Schilling <coding@schilljs.com>
  *
@@ -48,7 +49,7 @@ class Convert extends QueuedJob {
 		ITempManager $tempManager,
 		LoggerInterface $logger,
 		IRootFolder $rootFolder,
-		ITimeFactory $timeFactory
+		ITimeFactory $timeFactory,
 	) {
 		parent::__construct($timeFactory);
 		$this->config = $config;
@@ -102,7 +103,7 @@ class Convert extends QueuedJob {
 		$exitCode = 0;
 		exec($exec, $out, $exitCode);
 		if ($exitCode !== 0) {
-			$this->logger->error("could not convert {file}, reason: {out}",
+			$this->logger->error('could not convert {file}, reason: {out}',
 				[
 					'app' => 'workflow_pdf_converter',
 					'file' => $node->getPath(),
