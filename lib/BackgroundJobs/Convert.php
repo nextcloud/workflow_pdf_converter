@@ -1,4 +1,5 @@
 <?php
+
 /**
  * SPDX-FileCopyrightText: 2018 Nextcloud GmbH and Nextcloud contributors
  * SPDX-License-Identifier: AGPL-3.0-or-later
@@ -30,7 +31,7 @@ class Convert extends QueuedJob {
 		ITempManager $tempManager,
 		LoggerInterface $logger,
 		IRootFolder $rootFolder,
-		ITimeFactory $timeFactory
+		ITimeFactory $timeFactory,
 	) {
 		parent::__construct($timeFactory);
 		$this->config = $config;
@@ -84,7 +85,7 @@ class Convert extends QueuedJob {
 		$exitCode = 0;
 		exec($exec, $out, $exitCode);
 		if ($exitCode !== 0) {
-			$this->logger->error("could not convert {file}, reason: {out}",
+			$this->logger->error('could not convert {file}, reason: {out}',
 				[
 					'app' => 'workflow_pdf_converter',
 					'file' => $node->getPath(),
