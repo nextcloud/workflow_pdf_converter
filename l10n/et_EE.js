@@ -1,0 +1,14 @@
+OC.L10N.register(
+    "workflow_pdf_converter",
+    {
+    "Please choose a mode." : "Palun vali töörežiim.",
+    "PDF conversion" : "PDF-faili teisendamine",
+    "Convert documents into the PDF format on upload and write." : "Failide üleslaadimisel ja salvestamisel teisenda dokumendid PDF-failideks.",
+    "Automated PDF conversion" : "Automaatne teisendamine PDF-failideks",
+    "Rule based conversion of Documents into the PDF format" : "Reeglitepõhine dokumentide PDF-failideks teisendaja",
+    "Keep original, preserve existing PDFs" : "Säilita lähtefail, säilita olemasolevad PDF-failid",
+    "Keep original, overwrite existing PDF" : "Säilita lähtefail, kirjuta olemasolev PDF-fail üle",
+    "Delete original, preserve existing PDFs" : "Kustuta lähtefail, säilita olemasolevad PDF-failid",
+    "Delete original, overwrite existing PDF" : "Kustuta lähtefail, kirjuta olemasolev PDF-fail üle"
+},
+"nplurals=2; plural=(n != 1);");
