@@ -4,6 +4,7 @@
     "Convert documents into the PDF format on upload and write." : "Failide üleslaadimisel ja salvestamisel teisenda dokumendid PDF-failideks.",
     "Automated PDF conversion" : "Automaatne teisendamine PDF-failideks",
     "Rule based conversion of Documents into the PDF format" : "Reeglitepõhine dokumentide PDF-failideks teisendaja",
+    "An app to trigger automatic conversion of documents to PDF. Based on admin defined rules, a background job file be set up when a matching file was created or written, or was assigned a tag. Then, LibreOffice is being utilized for converting the document." : "Rakendus failide automaatseks konverterimiseks PDF-failideks. Peakasutaja määratud reeglite alusel lisatakse taustal täidetav ülesanne, mis vastava faili salvestamisel või lisamisel käivitab LibreOffice'il põhineva teisendamise.",
     "Keep original, preserve existing PDFs" : "Säilita lähtefail, säilita olemasolevad PDF-failid",
     "Keep original, overwrite existing PDF" : "Säilita lähtefail, kirjuta olemasolev PDF-fail üle",
     "Delete original, preserve existing PDFs" : "Kustuta lähtefail, säilita olemasolevad PDF-failid",
