@@ -3,11 +3,11 @@
   - SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 <template>
-	<NcSelect :value="currentValue"
+	<NcSelect v-model="currentValue"
 		:options="options"
 		track-by="id"
 		label="text"
-		@input="(newValue) => newValue !== null && $emit('input', newValue.id)" />
+		@input="emitInput" />
 </template>
 
 <script>
@@ -35,11 +35,12 @@ export default {
 	name: 'ConvertToPdf',
 	components: { NcSelect },
 	props: {
-		value: {
+		modelValue: {
 			default: pdfConvertOptions[0],
 			type: String,
 		},
 	},
+	emits: ['update:model-value'],
 	data() {
 		return {
 			options: pdfConvertOptions,
@@ -47,11 +48,16 @@ export default {
 	},
 	computed: {
 		currentValue() {
-			const newValue = pdfConvertOptions.find(option => option.id === this.value)
+			const newValue = pdfConvertOptions.find(option => option.id === this.modelValue)
 			if (typeof newValue === 'undefined') {
 				return pdfConvertOptions[0]
 			}
 			return newValue
+		},
+	},
+	methods: {
+		emitInput(value) {
+			this.$emit('update:model-value', '' + value.id)
 		},
 	},
 }
