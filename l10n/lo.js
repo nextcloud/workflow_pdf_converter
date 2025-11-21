@@ -1,0 +1,15 @@
+OC.L10N.register(
+    "workflow_pdf_converter",
+    {
+    "Please choose a mode." : "ກະລຸນາເລືອກໂໝດ.",
+    "PDF conversion" : "ການແປງ PDF",
+    "Convert documents into the PDF format on upload and write." : "ແປງເອກະສານເປັນຮູບແບບ PDF ເມື່ອມີການອັບໂຫຼດ ແລະ ບັນທຶກ.",
+    "Automated PDF conversion" : "ການແປງ PDF ແບບອັດຕະໂນມັດ",
+    "Rule based conversion of Documents into the PDF format" : "ການແປງເອກະສານເປັນຮູບແບບ PDF ຕາມກົດເກນທີ່ກຳນົດໄວ້",
+    "An app to trigger automatic conversion of documents to PDF. Based on admin defined rules, a background job file be set up when a matching file was created or written, or was assigned a tag. Then, LibreOffice is being utilized for converting the document." : "ແອັບພລິເຄຊັນສຳລັບສັ່ງການແປງເອກະສານເປັນ PDF ແບບອັດຕະໂນມັດ. ໂດຍອີງໃສ່ກົດເກນທີ່ຜູ້ດູແລລະບົບກຳນົດ, ລະບົບຈະຕັ້ງຄ່າງານເບື້ອງຫຼັງ ເມື່ອມີການສ້າງ ຫຼື ບັນທຶກໄຟລ໌ທີ່ຕົງຕາມເງື່ອນໄຂ ຫຼື ຖືກກຳນົດແທັກ. ຈາກນັ້ນ, ຈະມີການນຳໃຊ້ LibreOffice ເພື່ອດຳເນີນການແປງເອກະສານ.",
+    "Keep original, preserve existing PDFs" : "ເກັບຕົ້ນສະບັບໄວ້, ຮັກສາໄຟລ໌ PDF ທີ່ມີຢູ່ແລ້ວ",
+    "Keep original, overwrite existing PDF" : "ເກັບຕົ້ນສະບັບໄວ້, ຂຽນທັບໄຟລ໌ PDF ທີ່ມີຢູ່ແລ້ວ",
+    "Delete original, preserve existing PDFs" : "ລຶບຕົ້ນສະບັບ, ຮັກສາໄຟລ໌ PDF ທີ່ມີຢູ່ແລ້ວ",
+    "Delete original, overwrite existing PDF" : "ລຶບຕົ້ນສະບັບ, ຂຽນທັບໄຟລ໌ PDF ທີ່ມີຢູ່ແລ້ວ"
+},
+"nplurals=1; plural=0;");
