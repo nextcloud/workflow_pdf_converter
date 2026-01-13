@@ -20,6 +20,9 @@ use OCP\WorkflowEngine\IRuleMatcher;
 use OCP\WorkflowEngine\ISpecificOperation;
 use UnexpectedValueException;
 
+/**
+ * @psalm-api
+ */
 class Operation implements ISpecificOperation {
 	public const MODES = [
 		'keep;preserve',
@@ -38,28 +41,34 @@ class Operation implements ISpecificOperation {
 		$this->urlGenerator = $urlGenerator;
 	}
 
+	#[\Override]
 	public function validateOperation(string $name, array $checks, string $operation): void {
 		if (!in_array($operation, Operation::MODES)) {
 			throw new UnexpectedValueException($this->l->t('Please choose a mode.'));
 		}
 	}
 
+	#[\Override]
 	public function getDisplayName(): string {
 		return $this->l->t('PDF conversion');
 	}
 
+	#[\Override]
 	public function getDescription(): string {
 		return $this->l->t('Convert documents into the PDF format on upload and write.');
 	}
 
+	#[\Override]
 	public function getIcon(): string {
 		return $this->urlGenerator->imagePath('workflow_pdf_converter', 'app.svg');
 	}
 
+	#[\Override]
 	public function isAvailableForScope(int $scope): bool {
 		return true;
 	}
 
+	#[\Override]
 	public function onEvent(string $eventName, Event $event, IRuleMatcher $ruleMatcher): void {
 		if (!$event instanceof GenericEvent) {
 			return;
@@ -114,6 +123,7 @@ class Operation implements ISpecificOperation {
 		}
 	}
 
+	#[\Override]
 	public function getEntityId(): string {
 		return File::class;
 	}
