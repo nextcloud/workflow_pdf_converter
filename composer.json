@@ -11,13 +11,13 @@
 	"require-dev": {
 		"nextcloud/coding-standard": "^1.1",
 		"nextcloud/ocp": "dev-master",
-		"vimeo/psalm": "^5"
+		"vimeo/psalm": "^6.14"
 	},
 	"config": {
 		"autoloader-suffix": "WorkflowPDFConverter",
 		"optimize-autoloader": true,
 		"platform": {
-			"php": "8.2"
+			"php": "8.2.27"
 		}
 	},
 	"autoload": {

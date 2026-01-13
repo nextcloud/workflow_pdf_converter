@@ -20,21 +20,6 @@
         <ignoreFiles>
         </ignoreFiles>
     </extraFiles>
-    <issueHandlers>
-        <UndefinedClass>
-            <errorLevel type="suppress">
-                <referencedClass name="OC" />
-            </errorLevel>
-        </UndefinedClass>
-        <UndefinedDocblockClass>
-            <errorLevel type="suppress">
-                <referencedClass name="Doctrine\DBAL\Schema\Schema" />
-                <referencedClass name="Doctrine\DBAL\Schema\SchemaException" />
-                <referencedClass name="Doctrine\DBAL\Driver\Statement" />
-                <referencedClass name="Doctrine\DBAL\Schema\Table" />
-            </errorLevel>
-        </UndefinedDocblockClass>
-    </issueHandlers>
     <stubs>
         <file name="tests/stubs/oc_hooks_emitter.php" />
         <file name="tests/stubs/oc_files_filesystem.php" />

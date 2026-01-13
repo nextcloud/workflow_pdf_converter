@@ -17,6 +17,7 @@ use Psr\Container\ContainerInterface;
 
 /**
  * @template-implements IEventListener<RegisterOperationsEvent>
+ * @psalm-api
  */
 class RegisterFlowOperationsListener implements IEventListener {
 	private ContainerInterface $container;
@@ -25,6 +26,7 @@ class RegisterFlowOperationsListener implements IEventListener {
 		$this->container = $container;
 	}
 
+	#[\Override]
 	public function handle(Event $event): void {
 		if (!$event instanceof RegisterOperationsEvent) {
 			return;

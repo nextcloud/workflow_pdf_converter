@@ -20,6 +20,9 @@ use OCP\IConfig;
 use OCP\ITempManager;
 use Psr\Log\LoggerInterface;
 
+/**
+ * @psalm-api
+ */
 class Convert extends QueuedJob {
 	protected IConfig $config;
 	protected ITempManager $tempManager;
@@ -42,11 +45,15 @@ class Convert extends QueuedJob {
 
 	/**
 	 * @param mixed $argument
+	 *
 	 * @throws Exception
 	 * @throws InvalidPathException
 	 * @throws NotPermittedException
 	 * @throws NotFoundException
+	 *
+	 * @return void
 	 */
+	#[\Override]
 	protected function run($argument) {
 		$command = $this->getCommand();
 		if ($command === null) {
@@ -58,7 +65,6 @@ class Convert extends QueuedJob {
 		$targetPdfMode = (string)$argument['targetPdfMode'];
 
 		$pathSegments = explode('/', $path, 4);
-		$dir = dirname($path);
 		$file = basename($path);
 
 		Filesystem::init($pathSegments[1], '/' . $pathSegments[1] . '/files');
