@@ -10,7 +10,7 @@
 	},
 	"require-dev": {
 		"nextcloud/coding-standard": "^1.1",
-		"nextcloud/ocp": "dev-master",
+		"nextcloud/ocp": "dev-stable33",
 		"vimeo/psalm": "^6.14"
 	},
 	"config": {
