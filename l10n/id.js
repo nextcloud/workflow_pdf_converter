@@ -1,0 +1,14 @@
+OC.L10N.register(
+    "workflow_pdf_converter",
+    {
+    "Please choose a mode." : "Silakan pilih mode.",
+    "PDF conversion" : "Konversi PDF",
+    "Convert documents into the PDF format on upload and write." : "Konversikan dokumen ke dalam format PDF saat diunggah dan ditulis.",
+    "Automated PDF conversion" : "Konversi PDF otomatis",
+    "Rule based conversion of Documents into the PDF format" : "Konversi dokumen ke format PDF berbasis aturan",
+    "Keep original, preserve existing PDFs" : "Pertahankan yang asli, biarkan PDF yang sudah ada",
+    "Keep original, overwrite existing PDF" : "Pertahankan yang asli, timpa PDF yang sudah ada",
+    "Delete original, preserve existing PDFs" : "Hapus yang asli, biarkan PDF yang sudah ada",
+    "Delete original, overwrite existing PDF" : "Hapus yang asli, timpa PDF yang sudah ada"
+},
+"nplurals=1; plural=0;");
