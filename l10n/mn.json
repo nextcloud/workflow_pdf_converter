@@ -1,0 +1,12 @@
+{ "translations": {
+    "Please choose a mode." : "Горимоо сонгоно уу.",
+    "PDF conversion" : "PDF хөрвүүлэлт",
+    "Convert documents into the PDF format on upload and write." : "Байршуулах болон бичих үед баримтуудыг PDF формат руу хөрвүүлнэ.",
+    "Automated PDF conversion" : "Автомат PDF хөрвүүлэлт",
+    "Rule based conversion of Documents into the PDF format" : "Дүрэмд суурилсан баримтуудыг PDF формат руу хөрвүүлэх",
+    "Keep original, preserve existing PDFs" : "Эх файлыг хадгалах, одоо байгаа PDF-үүдийг хадгалах",
+    "Keep original, overwrite existing PDF" : "Эх файлыг хадгалах, одоо байгаа PDF-ийг дарж бичих",
+    "Delete original, preserve existing PDFs" : "Эх файлыг устгах, одоо байгаа PDF-үүдийг хадгалах",
+    "Delete original, overwrite existing PDF" : "Эх файлыг устгах, одоо байгаа PDF-ийг дарж бичих"
+},"pluralForm" :"nplurals=2; plural=(n != 1);"
+}
