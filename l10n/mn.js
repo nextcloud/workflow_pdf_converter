@@ -6,6 +6,7 @@ OC.L10N.register(
     "Convert documents into the PDF format on upload and write." : "Байршуулах болон бичих үед баримтуудыг PDF формат руу хөрвүүлнэ.",
     "Automated PDF conversion" : "Автомат PDF хөрвүүлэлт",
     "Rule based conversion of Documents into the PDF format" : "Дүрэмд суурилсан баримтуудыг PDF формат руу хөрвүүлэх",
+    "An app to trigger automatic conversion of documents to PDF. Based on admin defined rules, a background job file be set up when a matching file was created or written, or was assigned a tag. Then, LibreOffice is being utilized for converting the document." : "Баримт бичгийг PDF болгон автоматаар хөрвүүлэх ажиллагааг эхлүүлдэг апп. Администраторын тогтоосон дүрмийн дагуу тохирох файл үүсгэгдэх, бичигдэх, эсвэл шошго олгогдоход арын даалгавар тохируулагдана. Дараа нь LibreOffice ашиглан баримт бичгийг хөрвүүлдэг.",
     "Keep original, preserve existing PDFs" : "Эх файлыг хадгалах, одоо байгаа PDF-үүдийг хадгалах",
     "Keep original, overwrite existing PDF" : "Эх файлыг хадгалах, одоо байгаа PDF-ийг дарж бичих",
     "Delete original, preserve existing PDFs" : "Эх файлыг устгах, одоо байгаа PDF-үүдийг хадгалах",
