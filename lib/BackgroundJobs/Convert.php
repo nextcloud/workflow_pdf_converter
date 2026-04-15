@@ -65,6 +65,7 @@ class Convert extends QueuedJob {
 		$targetPdfMode = (string)$argument['targetPdfMode'];
 
 		$pathSegments = explode('/', $path, 4);
+		$dir = dirname($path);
 		$file = basename($path);
 
 		Filesystem::init($pathSegments[1], '/' . $pathSegments[1] . '/files');

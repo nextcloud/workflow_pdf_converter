@@ -7,6 +7,9 @@
 
 namespace OC\Files {
 	class View {
+		public function __construct(string $root = '') {
+		}
+
 		public function toTmpFile($path): string|false {
 		}
 
