@@ -6,6 +6,7 @@ OC.L10N.register(
     "Convert documents into the PDF format on upload and write." : "Converter documentos para PDF no carregamento e ao guardar.",
     "Automated PDF conversion" : "Conversão automática de PDF",
     "Rule based conversion of Documents into the PDF format" : "Conversão de documentos baseada em regras para o formato PDF",
+    "An app to trigger automatic conversion of documents to PDF. Based on admin defined rules, a background job file be set up when a matching file was created or written, or was assigned a tag. Then, LibreOffice is being utilized for converting the document." : "Um aplicativo para converter documentos automaticamente em PDF. Baseado em regras definidas pelo administrador, uma tarefa em segundo plano pode ser executada quando um arquivo é criado, gravado ou é atribuído a um rótulo. Então, o LibreOffice é utilizado para converter o documento.",
     "Keep original, preserve existing PDFs" : "Manter o original, preservar PDFs existentes",
     "Keep original, overwrite existing PDF" : "Manter o original, substituir PDF",
     "Delete original, preserve existing PDFs" : "Apagar o original, manter PDFs existentes",
