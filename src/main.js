@@ -5,7 +5,6 @@
 
 import wrap from '@vue/web-component-wrapper'
 import Vue from 'vue'
-
 import ConvertToPdf from './ConvertToPdf.vue'
 
 const ConvertToPdfComponent = wrap(Vue, ConvertToPdf)
