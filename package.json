@@ -1,30 +1,26 @@
 {
   "name": "workflow_pdf_converter",
-  "description": "Workflow for converting to pdf",
-  "version": "6.0.0-dev.0",
-  "author": "Julius Härtl <jus@bitgrid.net>",
-  "license": "agpl",
+  "version": "6.0.0",
   "private": true,
+  "description": "Workflow for converting to pdf",
+  "license": "agpl",
+  "author": "Julius Härtl <jus@bitgrid.net>",
   "scripts": {
     "build": "NODE_ENV=production webpack --progress --config webpack.js",
     "dev": "NODE_ENV=development webpack --progress --config webpack.js",
-    "watch": "NODE_ENV=development webpack --progress --watch --config webpack.js",
     "lint": "eslint --ext .js,.vue src",
     "lint:fix": "eslint --ext .js,.vue src --fix",
     "stylelint": "stylelint src",
-    "stylelint:fix": "stylelint src --fix"
-  },
-  "dependencies": {
-    "@nextcloud/vue": "9.9.0",
-    "@vue/web-component-wrapper": "^1.3.0",
-    "vue": "^2.7.16"
+    "stylelint:fix": "stylelint src --fix",
+    "watch": "NODE_ENV=development webpack --progress --watch --config webpack.js"
   },
   "browserslist": [
     "extends @nextcloud/browserslist-config"
   ],
-  "engines": {
-    "node": "^24.0.0",
-    "npm": "^11.3.0"
+  "dependencies": {
+    "@nextcloud/vue": "9.9.0",
+    "@vue/web-component-wrapper": "^1.3.0",
+    "vue": "^2.7.16"
   },
   "devDependencies": {
     "@nextcloud/babel-config": "^1.3.0",
@@ -33,5 +29,9 @@
     "@nextcloud/eslint-plugin": "^2.2.1",
     "@nextcloud/stylelint-config": "^3.2.2",
     "@nextcloud/webpack-vue-config": "^6.3.0"
+  },
+  "engines": {
+    "node": "^24.0.0",
+    "npm": "^11.3.0"
   }
 }
