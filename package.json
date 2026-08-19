@@ -1,7 +1,7 @@
 {
   "name": "workflow_pdf_converter",
+  "version": "6.0.0",
   "description": "Workflow for converting to pdf",
-  "version": "6.0.0-dev.0",
   "author": "Julius Härtl <jus@bitgrid.net>",
   "license": "agpl",
   "private": true,
