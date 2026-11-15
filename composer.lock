@@ -1774,7 +1774,8 @@
                 "issues": "https://github.com/nextcloud-deps/ocp/issues",
                 "source": "https://github.com/nextcloud-deps/ocp/tree/stable35"
             },
-            "time": "2026-11-06T04:03:15+00:00"
+            "time": "2026-11-06T04:03:15+00:00",
+            "published-time": "2026-11-06T04:03:20+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -3853,10 +3854,10 @@
     },
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
-    "platform-dev": [],
+    "platform": {},
+    "platform-dev": {},
     "platform-overrides": {
         "php": "8.3.36"
     },
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.11.0"
 }
